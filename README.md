@@ -57,3 +57,15 @@ The font (as it were) is (will be, once i finish it) included in
     finish 0-9
     finish common symbols .,;:?/!+-= etc,
 
+## References
+
+This is very similar to the Hershey fonts:
+https://en.wikipedia.org/wiki/Hershey_fonts which you probably should use, as
+they have been around for some time
+
+This method is also similar to drawing in Logo:
+https://en.wikipedia.org/wiki/Logo_(programming_language)
+
+The path definitions are also similar to the SVG format (but simpler):
+https://en.wikipedia.org/wiki/Scalable_Vector_Graphics
+
