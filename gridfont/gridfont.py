@@ -7,20 +7,8 @@ from .helpers import _parse_size
 from .utils import pwrite
 
 
-sep = '|'
+SEP = '|'
 
-# TODO: rewrite this for greater flexibility
-compass = {
-    'N': (0, -1),
-    'n': (0, 1),
-    'R': (1, 0),
-    'r': (-1, 0),
-    'Q': (-1, -1),
-    'q': (1, 1),
-    'E': (1, -1),
-    'e': (-1, 1),
-    'D': (0, 0, True),
-    }
 
 def assert_symbol_size(w, h, paths):
   for path in paths:
@@ -51,7 +39,7 @@ class Gridfont():
     for char, o in self.symbols.items():
       try:
         raw = o['raw'].strip()
-        raw_paths = raw.split(sep)
+        raw_paths = raw.split(SEP)
         w, h = _parse_size(raw_paths[0])
         raw_paths = raw_paths[1:]
         assert raw_paths, 'must have at least one path'
