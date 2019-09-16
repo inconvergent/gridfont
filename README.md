@@ -1,40 +1,20 @@
 # Gridfont - grid-based font for (pen) plotting
 
 
-Simple system for describing symbols/characters drawn on a regular grid.
+Simple system for describing drawings/symbols on a regular grid. Including a
+simple single-line font with a few of the basic ascii characters.
 
-The first section describes the width, and the height of the symbol. eg.
+The symbol descriptions look like this:
 
-    S3,8
+    S4,9:Dn6|n3DERqn2er
 
-for `width=3` and `height=8`.
+The first section (left of `:`) is the `info` section. Which currently contains
+the size of the grid. Here the width is 4 and the height is 9.
 
-Paths are seperated by the `|` (`pipe`) symbol.
+The next section is one or more paths, separated by the pipe symbol `|`.
 
-When drawing a new path the cursor is always reset to the origin (upper left).
-
-use the command `D` to start the path after moving to the desired position.
-
-The following directions are allowed. Any integer after a direction command
-is interpretated as the length of the step, otherwise the step size is 1.
-
-
-    Q   N   E
-      \ | /
-       \|/
-    r --|-- R
-       /|\
-      / | \
-    e   n   q
-
-
-As an example, the letter `b` can be written like this:
-
-
-    S3,8|Dn6|n3DERqn2er
-
-
-Specifically, this should result in two paths:
+Specifically, the above example should result in the two paths of the letter
+`b`:
 
 
     |   <-- p1
@@ -45,19 +25,69 @@ Specifically, this should result in two paths:
     |\-/
 
 
+## Paths
+
+When drawing a new path the cursor is always reset to the `origin`, which is in
+the upper left corner. The coordinate system is rotated like this:
+
+        -
+        |
+    - --o-- x+
+        |
+        y+
+
+From there you can perform relative and absolute moves. Once the command `D` is
+entered the path will start being drawn. Which means you can move the cursor
+into position before starting each path.
+
+
+### Relative motions
+
+The following commands are allowed:
+
+     Q   N   E
+       \ | /
+     r - o - R    <-- o is the current position of the cursor
+       / | \
+     e   n   q
+
+Any integer after a direction command is interpreted as the length of the step,
+otherwise the step size is 1.
+
+
+### Absolute moves
+
+The following absolute moves are allowed
+
+  - `Mx,y` to move to position `x,y` relative to the `origin`.
+  - W to move to move out to the right hand side of the drawing.
+  - w to move to the left.
+  - H to move to the top of the drawing.
+  - h to move to the bottom of the drawing.
+
+
+*(The following is incomplete. For this to work the spec requires grouping
+commands to avoid accumulating the path for individual commands.)*
+
+As an example, you can use `hW` to move to the lower right hand corner from any
+position.
+
+
 ## Font
 
-The font (as it were) is (will be, once i finish it) included in
+The font (as it were) is (will be, once I finish it) included in
 `dat/font-parsed.json`. The raw descriptions are in `dat/font.json`
 
 
 ## TODO
 
-    add Mx,y cmd (absolute move)?
     groups/pre-defined shapes?
-    finish a-z
-    finish 0-9
-    finish common symbols .,;:?/!+-= etc,
+    group individual moves (to allow complex moves)
+    draw paths as svg (for debug etc.)
+    add W/w/H/h commands
+    finish a-z characters
+    finish 0-9 characters
+    finish some common symbols .,;:?/!+-= etc,
 
     simple pair kerning instructions?
     some ligatures?

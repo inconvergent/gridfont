@@ -1,46 +1,53 @@
 # -*- coding: utf-8 -*-
 
-def _add(a, b, s):
-  return a[0] + s*b[0], a[1] + s*b[1]
+from re import compile as re_compile
 
-def _alter_state(state, cmd, s=1):
-  a, b = _add(state, cmd, s)
-  if len(cmd) < 3:
-    return a, b, state[2]
-  return a, b, cmd[2]
+base_symbols = '0123456789,'
 
 
-def _parse_size(s):
+def _get_tokenizer(compass, cmds):
+  all_commands = set(compass.keys())
+  all_commands.update(set(cmds))
+  assert len(compass.keys()) == len(all_commands)-2,\
+      'compass can not contain commands with the same name as ' +\
+      '"pen_down" or "abs_move" in the system definition (json)'
+  r = re_compile(r'[{:s}][0-9,]*'.format(''.join(all_commands)))
+  return lambda p: [x.group(0) for x in r.finditer(p)]
+
+
+def _add(a, b, arg=1):
+  if isinstance(arg, tuple):
+    return a[0] + arg[0]*b[0], a[1] + arg[1]*b[1]
+  return a[0] + arg*b[0], a[1] + arg*b[1]
+
+def _parse_info(s):
   assert s.startswith('S'), 'must start with "S"'
-  w, h = [int(i) for i in s[1:].split(',')]
+  w, h = [int(i) for i in s[1:].strip().split(',')]
   return w, h
 
-def _next_cmd_ind(compass, p, _from):
-  n = len(p)
-  for i in range(_from+1, n):
-    if p[i] in compass:
-      return i
-  return n
+def _proc_tok(tok):
+  cmd = tok[0]
+  arg = tok[1:]
+  return cmd, _proc_arg(arg)
+
+def _proc_arg(arg):
+  if not arg:
+    return 1
+  if ',' in arg:
+    return tuple([int(a) for a in arg.split(',')])
+  return int(arg)
 
 
-def _parse_path(compass, p):
-  state = (0, 0, False)
-  n = len(p)
-  i = 0
-  path = []
-  while i < n:
-    c = p[i]
-    next_ind = _next_cmd_ind(compass, p, i)
-    scale = int(p[i+1:next_ind]) if (next_ind-i) > 1 else 1
-    cmd = compass[c]
-    state = _alter_state(state, cmd, scale)
-    x, y, pen = state
-    if pen:
-      path.append((x, y))
-    i = next_ind
-  return path
+def _assert_symbol_size(w, h, paths):
+  for path in paths:
+    for x, y in path:
+      assert 0 <= x < w, 'x is out of bounds'
+      assert 0 <= y < h, 'y is out of bounds'
+  return True
 
-def _parse_paths(compass, pp):
-  for p in pp:
-    yield _parse_path(compass, p)
+def _assert_valid_cmds(commands, path):
+  for p in path:
+    assert p in commands or p in base_symbols,\
+        'not a valid command: {:s}'.format(p)
+  return True
 

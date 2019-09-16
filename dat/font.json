@@ -1,4 +1,5 @@
 {
+    "abs_move": "M",
     "compass": {
         "E": [
             1,
@@ -34,19 +35,24 @@
         ]
     },
     "groups": {
-        "v4": "n4",
-        "v6": "n6",
-        "v8": "n8"
+        "mv4": "n4",
+        "mv8": "n4",
+        "hv6": "n6",
+        "lv6": "n8"
     },
+    "pen_down": "D",
     "symbols": {
         "a": {
-            "raw": "S3,8|R3n2Dn4|R3n3DQren2qRE"
+            "raw": "S4,9:R3n2Dn4|R3n3DQren2qRE"
         },
         "b": {
-            "raw": "S3,8|Dn6|n3DERqn2er"
+            "raw": "S4,9:Dn6|n3DERqn2er"
         },
         "c": {
-            "raw": "S3,8|R3n3DQren2qRE"
+            "raw": "S4,9:R3n3DQren2qRE"
+        },
+        "d": {
+            "raw": "S4,9:DM1,2q"
         }
     }
 }

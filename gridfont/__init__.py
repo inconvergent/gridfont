@@ -24,7 +24,6 @@ import traceback
 from docopt import docopt
 
 from .gridfont import Gridfont
-from .gridfont import compass
 
 
 
@@ -33,7 +32,7 @@ def main():
   try:
     _in = args['<in>']
     _out = args['<out>']
-    font = Gridfont(compass).parse(_in).save(_out)
+    font = Gridfont(_in).parse().save(_out)
 
   except Exception:
     traceback.print_exc(file=sys.stdout)
