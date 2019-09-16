@@ -44,6 +44,7 @@ Specifically, this should result in two paths:
     |   |
     |\-/
 
+
 ## Font
 
 The font (as it were) is (will be, once i finish it) included in
@@ -52,10 +53,15 @@ The font (as it were) is (will be, once i finish it) included in
 
 ## TODO
 
-    add Mx,y cmd
+    add Mx,y cmd (absolute move)?
+    groups/pre-defined shapes?
     finish a-z
     finish 0-9
     finish common symbols .,;:?/!+-= etc,
+
+    simple pair kerning instructions?
+    some ligatures?
+
 
 ## References
 
@@ -68,4 +74,7 @@ https://en.wikipedia.org/wiki/Logo_(programming_language)
 
 The path definitions are also similar to the SVG format (but simpler):
 https://en.wikipedia.org/wiki/Scalable_Vector_Graphics
+
+If you find this interesting, you might also like Recursive Radical Packing
+Language: https://github.com/LingDong-/rrpl
 

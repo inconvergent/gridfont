@@ -8,6 +8,8 @@ from .utils import pwrite
 
 
 sep = '|'
+
+# TODO: rewrite this for greater flexibility
 compass = {
     'N': (0, -1),
     'n': (0, 1),
@@ -20,39 +22,55 @@ compass = {
     'D': (0, 0, True),
     }
 
+def assert_symbol_size(w, h, paths):
+  for path in paths:
+    for x, y in path:
+      assert 0 <= x <= w, 'x is out of bounds'
+      assert 0 <= y <= h, 'y is out of bounds'
+
 class Gridfont():
   def __init__(self, comp):
     self.jsn = {}
+    self.groups = {}
+    self.symbols = {}
     self.compass = comp
 
   def _load(self, fn):
     with open(fn) as f:
-      self.jsn = load(f)
+      jsn = load(f)
+      # note: these structures are manipulated in place
+      self.jsn = jsn
+      self.groups = jsn['groups']
+      self.symbols = jsn['symbols']
     return self
 
   def parse(self, fn):
     print('parsing:', fn)
     self._load(fn)
-    for char, o in self.jsn.items():
-      raw_paths = o['raw'].split(sep)
-      w, h = _parse_size(raw_paths[0])
-      raw_paths = raw_paths[1:]
-      assert raw_paths, 'must have at least one path'
-      paths = list(_parse_paths(self.compass, raw_paths))
-      assert paths, 'failed to parse at least one path'
-      o['w'] = w
-      o['h'] = h
-      num = len(paths)
-      print('char: {:s} --- w: {:d} h: {:d} # {:d}'.format(char, w, h, num))
-      o['paths'] = paths
-      o['num'] = num
+
+    for char, o in self.symbols.items():
+      try:
+        raw = o['raw'].strip()
+        raw_paths = raw.split(sep)
+        w, h = _parse_size(raw_paths[0])
+        raw_paths = raw_paths[1:]
+        assert raw_paths, 'must have at least one path'
+        paths = list(_parse_paths(self.compass, raw_paths))
+        assert paths, 'failed to parse at least one path'
+        assert_symbol_size(w, h, paths)
+        o['w'] = w
+        o['h'] = h
+        num = len(paths)
+        print('char: {:s} --- w: {:d} h: {:d} # {:d}'.format(char, w, h, num))
+        o['paths'] = paths
+        o['num'] = num
+      except Exception as e:
+        print('error char: {:s} --- {:s}'.format(char, str(e)))
     return self
 
   def save(self, fn):
-    # from .utils import pprint
-    # pprint(self.jsn)
     print('writing:', fn)
     with open(fn, 'w') as f:
-      pwrite(self.jsn, f)
+      pwrite(self.symbols, f)
     return self
 

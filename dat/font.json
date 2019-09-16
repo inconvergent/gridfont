@@ -1,12 +1,18 @@
 {
-    "a": {
-        "raw": "S3,8|R3n2Dn4|R3n3DQren2qRE"
+    "groups": {
+        "v4": "n4",
+        "v6": "n6",
+        "v8": "n8"
     },
-    "b": {
-        "raw": "S3,8|Dn6|n3DERqn2er"
-    },
-    "c": {
-        "raw": "S3,8|R3n3DQren2qRE"
+    "symbols": {
+        "a": {
+            "raw": "S3,8|R3n2Dn4|R3n3DQren2qRE"
+        },
+        "b": {
+            "raw": "S3,8|Dn6|n3DERqn2er"
+        },
+        "c": {
+            "raw": "S3,8|R3n3DQren2qRE"
+        }
     }
 }
-
