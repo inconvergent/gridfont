@@ -1,5 +1,4 @@
 {
-    "abs_move": "M",
     "compass": {
         "E": [
             1,
@@ -35,12 +34,19 @@
         ]
     },
     "groups": {
-        "mv4": "n4",
-        "mv8": "n4",
         "hv6": "n6",
-        "lv6": "n8"
+        "lv6": "n8",
+        "mv4": "n4",
+        "mv8": "n4"
     },
-    "pen_down": "D",
+    "special": {
+        "abs_move": "M",
+        "bottom": "h",
+        "left": "w",
+        "pen_down": "D",
+        "right": "W",
+        "top": "H"
+    },
     "symbols": {
         "a": {
             "raw": "S4,9:R3n2Dn4|R3n3DQren2qRE"

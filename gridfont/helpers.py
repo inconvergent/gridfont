@@ -2,15 +2,15 @@
 
 from re import compile as re_compile
 
-base_symbols = '0123456789,'
+# base_symbols = '0123456789,'
 
 
-def _get_tokenizer(compass, cmds):
+def _get_tokenizer(compass, special):
   all_commands = set(compass.keys())
-  all_commands.update(set(cmds))
-  assert len(compass.keys()) == len(all_commands)-2,\
-      'compass can not contain commands with the same name as ' +\
-      '"pen_down" or "abs_move" in the system definition (json)'
+  all_commands.update(set(special))
+  assert len(compass.keys()) == len(all_commands)-len(special),\
+      'compass can not contain commands with the same name as commands' +\
+      'defined in the special section.'
   r = re_compile(r'[{:s}][0-9,]*'.format(''.join(all_commands)))
   return lambda p: [x.group(0) for x in r.finditer(p)]
 
@@ -45,9 +45,9 @@ def _assert_symbol_size(w, h, paths):
       assert 0 <= y < h, 'y is out of bounds'
   return True
 
-def _assert_valid_cmds(commands, path):
-  for p in path:
-    assert p in commands or p in base_symbols,\
-        'not a valid command: {:s}'.format(p)
-  return True
+# def _assert_valid_cmds(commands, path):
+#   for p in path:
+#     assert p in commands or p in base_symbols,\
+#         'not a valid command: {:s}'.format(p)
+#   return True
 

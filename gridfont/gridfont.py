@@ -18,18 +18,17 @@ class Gridfont():
   def _load(self, fn):
     with open(fn) as f:
       jsn = load(f)
-      self.move = jsn['abs_move']
-      self.down = jsn['pen_down']
+      self.special = jsn['special']
 
       # note: these structures are manipulated in place
       self.jsn = jsn
       self.groups = jsn['groups']
       self.symbols = jsn['symbols']
       self.compass = jsn['compass']
-      self.all_commands = ''
+      # self.all_commands = ''
 
       # path definition tokenizer
-      self.tokfx = _get_tokenizer(self.compass, [self.move, self.down])
+      self.tokfx = _get_tokenizer(self.compass, list(self.special.values()))
     return self
 
   def _parse_path(self, path):
@@ -37,9 +36,9 @@ class Gridfont():
     # _assert_valid_cmds(self.all_commands)
     for tok in self.tokfx(path):
       cmd, arg = _proc_tok(tok)
-      if cmd == self.move:
+      if cmd == self.special['abs_move']:
         state = arg[0], arg[1], state[-1]
-      elif cmd == self.down:
+      elif cmd == self.special['pen_down']:
         state = state[0], state[1], True
       elif cmd in self.compass:
         npx, npy = _add(state, self.compass[cmd], arg)
