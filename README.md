@@ -9,7 +9,7 @@ simple single-line font with a few of the basic ascii characters.
 
 The symbol descriptions look like this:
 
-    S4,9:Dn6|n3DERqn2er
+    S4,9:Dn6|n3DERqn2erQ
 
 The first section (left of `:`) is the `info` section. Which currently contains
 the size of the grid. Here the width is 4 and the height is 9. In time this
@@ -90,20 +90,19 @@ the this library.
 
     python3 setup.py install --user
 
-Then run the following to output the result to `res.json`
+Then run the following to output the results to the directory `out`
 
-    gridfont dat/font.json dat/res.json
+    gridfont dat/font.json out
 
 
 ## TODO
 
  - groups/pre-defined shapes?
  - group individual moves (to allow complex moves)
- - draw paths as svg (for debug etc.)
  - finish a-z characters
  - finish 0-9 characters
  - finish some common symbols .,;:?/!+-= etc,
-
+ - use python Pathlib for paths
  - simple pair kerning instructions?
  - some ligatures?
 

@@ -4,10 +4,11 @@ from svgwrite import Drawing
 from svgwrite import rgb
 
 black = rgb(0, 0, 0, '%')
+accent = rgb(0, 100, 100, '%')
 
-def shift(path):
+def shift(path, sx=1, sy=1):
   for x, y in path:
-    yield x+1, y+1
+    yield x+sx, y+sy
 
 
 def _svgpath(path):
@@ -16,9 +17,18 @@ def _svgpath(path):
     yield 'L{:d},{:d}'.format(*p)
 
 
+def box(bbox):
+  w, h = bbox
+  return [[0, 0], [w-1, 0], [w-1, h-1], [0, h-1]]
+
+
 def draw_paths(fn, bbox, paths):
   w, h = bbox
   dwg = Drawing(fn, size=(w+2, h+2), profile='tiny')
+
+  bbox_path = ''.join(_svgpath(list(shift(box(bbox)))))+'Z'
+  dwg.add(dwg.path(d=bbox_path, stroke=accent, stroke_width=0.1, fill='none'))
+
   for path in paths:
     dwg.add(dwg.path(
         d=''.join(_svgpath(list(shift(path)))),

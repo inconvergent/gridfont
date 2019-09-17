@@ -49,13 +49,13 @@
     },
     "symbols": {
         "a": {
-            "raw": "S4,9:R3n2Dn4|R3n3DQren2qRE"
+            "raw": "S4,9:M3,2Dn4|R3n3DQren2qRE"
         },
         "b": {
             "raw": "S4,9:Dn6|n3DERqn2erQ"
         },
         "c": {
-            "raw": "S4,9:R3n3DQren2qRE"
+            "raw": "S4,9:M3,3DQren2qRE"
         },
         "rnd": {
             "raw": "S4,9:DM1,2qHWh"
