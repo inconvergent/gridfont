@@ -99,7 +99,7 @@ class Gridfont():
     for symb, o in self.symbols.items():
       fn = '{:s}/symb_{:s}.svg'.format(out, symb)
       print('writing: ', fn)
-      draw_paths(fn, (o['w']-1, o['h']-1), o['paths'])
+      draw_paths(fn, (o['w'], o['h']), o['paths'])
     return self
 
   def save(self, out):
