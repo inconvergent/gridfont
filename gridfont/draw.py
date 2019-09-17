@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 
 from svgwrite import Drawing
-from svgwrite import rgb
 
-black = rgb(0, 0, 0, '%')
-accent = rgb(0, 100, 100, '%')
+black = 'black'
+accent = 'cyan'
 
 
 def _shift(path, sx=1, sy=1):
@@ -37,10 +36,7 @@ def draw_paths(fn, bbox, paths):
   dwg.add(dwg.path(d=bbox_path, stroke=accent, stroke_width=0.1, fill='none'))
 
   for path in paths:
-    dwg.add(dwg.path(
-        d=svgpath(path),
-        stroke=black,
-        fill='none',
-        stroke_width=0.2))
+    dwg.add(
+        dwg.path(d=svgpath(path), stroke=black, fill='none', stroke_width=0.2))
   dwg.save(pretty=True, indent=2)
 
