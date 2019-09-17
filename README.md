@@ -1,8 +1,7 @@
 # Gridfont - Grid-based Drawing
 
 
-**NOTE: this code is incomplete, and it is not very likely to work at the
-moment.**
+**NOTE: this code is a work in progress, and it might change at any moment.**
 
 Simple system for describing drawings/symbols on a regular grid. Including a
 simple single-line font with a few of the basic ascii characters.
@@ -75,8 +74,8 @@ The following absolute moves are allowed
 
 ## Font
 
-The font (as it were) is included in `out/res.json`. The raw descriptions are
-in `dat/font.json`
+The font paths are included in `out/res.json`, along with SVGs for each symbol.
+The raw descriptions are in `dat/font.json`
 
 
 ## Running the Code
@@ -94,7 +93,7 @@ Then run the following to output the results to the directory `out`
 ## Todo
 
  - groups/pre-defined shapes?
- - finish more common symbols ()[]#@ ...
+ - finish more common symbols `()[]#@` ...
  - use python Pathlib for paths
  - simple pair kerning instructions?
  - some ligatures?
@@ -102,16 +101,16 @@ Then run the following to output the results to the directory `out`
 
 ## References
 
-This is very similar to the Hershey fonts:
-https://en.wikipedia.org/wiki/Hershey_fonts which you probably should use, as
-they have been around for some time
+ - This is very similar to the Hershey fonts:
+   https://en.wikipedia.org/wiki/Hershey_fonts which you probably should use,
+   as they have been around for some time
 
-This method is also similar to drawing in Logo:
-https://en.wikipedia.org/wiki/Logo_(programming_language)
+ - This method is also similar to drawing in Logo:
+   https://en.wikipedia.org/wiki/Logo_(programming_language)
 
-The path definitions are also similar to the SVG format (but simpler):
-https://en.wikipedia.org/wiki/Scalable_Vector_Graphics
+ - The path definitions are also similar to the SVG format (but simpler):
+   https://en.wikipedia.org/wiki/Scalable_Vector_Graphics
 
-If you find this interesting, you might also like Recursive Radical Packing
-Language: https://github.com/LingDong-/rrpl
+ - If you find this interesting, you might also like Recursive Radical Packing
+   Language: https://github.com/LingDong-/rrpl
 
