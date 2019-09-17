@@ -24,7 +24,6 @@ class Gridfont():
       self.special = jsn['special']
 
       # note: these structures are manipulated in place
-      self.jsn = jsn
       self.groups = jsn['groups']
       self.symbols = jsn['symbols']
       self.compass = jsn['compass']
@@ -96,9 +95,9 @@ class Gridfont():
     return self
 
   def save_svg(self, out):
+    print('writing svgs to:', out)
     for symb, o in self.symbols.items():
       fn = '{:s}/symb_{:s}.svg'.format(out, symb)
-      print('writing: ', fn)
       draw_paths(fn, (o['w'], o['h']), o['paths'])
     return self
 
