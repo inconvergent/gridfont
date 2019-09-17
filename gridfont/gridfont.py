@@ -100,7 +100,8 @@ class Gridfont():
     print('writing svgs to:', out)
     for symb, o in self.symbols.items():
       name = o['name'] if 'name' in o else symb
-      fn = '{:s}/symb_{:s}.svg'.format(out, name)
+      _type = o['type'] if 'type' in o else 'symb'
+      fn = '{:s}/{:s}_{:s}.svg'.format(out, _type, name)
       try:
         draw_paths(fn, (o['w'], o['h']), o['paths'])
       except Exception as e:
