@@ -204,7 +204,11 @@
             "type": "letter"
         },
         "p": {
-            "raw": "S4,9:M3,2DS6|M3,3DpLeS2qRt",
+            "raw": "S4,9:M3,2Dh|M3,3DpLeS2qRt",
+            "type": "letter"
+        },
+        "q": {
+            "raw": "S4,9:M3,2Dh|R3S3DpLeS2qRt",
             "type": "letter"
         },
         "r": {
