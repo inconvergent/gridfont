@@ -56,7 +56,10 @@ The following commands are allowed:
      e   n   q
 
 Any integer after a direction command is interpreted as the length of the step,
-otherwise the step size is 1.
+otherwise the step size is 1. You can also use two integers separated by a
+comma. For instance `q2,3` will move the cursor two steps to the right, and
+three steps down. Similarly `Q2,3` will move the cursor two steps left, and
+three steps up.
 
 
 ### Absolute moves
@@ -68,13 +71,6 @@ The following absolute moves are allowed
   - `w` to move to the left side of the drawing.
   - `H` to move to the top of the drawing.
   - `h` to move to the bottom of the drawing.
-
-
-**(The following is incomplete. For this to work the spec requires grouping
-commands to avoid accumulating the path for individual commands.)**
-
-As an example, you can use `hW` to move to the lower right hand corner from any
-position.
 
 
 ## Font
