@@ -1,40 +1,39 @@
 {
     "compass": {
-        "t": [
-            1,
-            -1
+        "L": [
+            -1,
+            0
         ],
         "N": [
             0,
-            -1
-        ],
-        "p": [
-            -1,
             -1
         ],
         "R": [
             1,
             0
         ],
+        "S": [
+            0,
+            1
+        ],
         "e": [
             -1,
             1
         ],
-        "S": [
-            0,
-            1
+        "p": [
+            -1,
+            -1
         ],
         "q": [
             1,
             1
         ],
-        "L": [
-            -1,
-            0
+        "t": [
+            1,
+            -1
         ]
     },
-    "groups": {
-    },
+    "groups": {},
     "special": {
         "abs_move": "M",
         "bottom": "h",
@@ -44,110 +43,205 @@
         "top": "H"
     },
     "symbols": {
+        "!": {
+            "name": "exclaim",
+            "raw": "S1,9:DS4|S5DS",
+            "type": "symbol"
+        },
+        "*": {
+            "name": "star",
+            "raw": "S3,9:S4DR2|M1,3DS2|S3Dq2|S5Dt2",
+            "type": "symbol"
+        },
+        "+": {
+            "name": "plus",
+            "raw": "S3,9:S4DR2|M1,3DS2",
+            "type": "symbol"
+        },
+        ",": {
+            "name": "comma",
+            "raw": "S2,9:M1,6De",
+            "type": "symbol"
+        },
+        "-": {
+            "name": "dash",
+            "raw": "S3,9:S4DR2",
+            "type": "symbol"
+        },
+        ".": {
+            "name": "period",
+            "raw": "S2,9:M1,6DL",
+            "type": "symbol"
+        },
+        "/": {
+            "name": "slash",
+            "raw": "S3,9:M2,2De2,5",
+            "type": "symbol"
+        },
         "0": {
-            "raw": "S4,9:q3DpLeS2qRtN2|M1,4DR"
+            "raw": "S4,9:q3DpLeS2qRtN2|M1,4DR",
+            "type": "digit"
         },
         "1": {
-            "raw": "S2,9:S3DtS4"
+            "raw": "S2,9:S3DtS4",
+            "type": "digit"
         },
         "2": {
-            "raw": "S4,9:S3DtRqe3R3"
+            "raw": "S4,9:S3DtRqe3R3",
+            "type": "digit"
         },
         "3": {
-            "raw": "S4,9:S2DR3e2q2,1S2eLp"
+            "raw": "S4,9:S2DR3e2q2,1S2eLp",
+            "type": "digit"
         },
         "4": {
-            "raw": "S4,9:S2DS2qR2|M3,2DS6"
+            "raw": "S4,9:S2DS2qR2|M3,2DS6",
+            "type": "digit"
         },
         "5": {
-            "raw": "S4,9:M3,2DL3S2R2qS2eL2"
+            "raw": "S4,9:M3,2DL3S2R2qS2eL2",
+            "type": "digit"
         },
         "6": {
-            "raw": "S4,9:M3,1DpLeS4qRtN2pLe|M1,4DR"
+            "raw": "S4,9:M3,1DpLeS4qRtN2pLe|M1,4DR",
+            "type": "digit"
         },
         "7": {
-            "raw": "S4,9:S2DR3e3,6"
+            "raw": "S4,9:S2DR3e3,6",
+            "type": "digit"
         },
         "8": {
-            "raw": "S4,9:M1,3DpNtRqSeLeSqRtNp"
+            "raw": "S4,9:M1,3DpNtRqSeLeSqRtNp",
+            "type": "digit"
         },
         "9": {
-            "raw": "S4,9:M3,5DeLpN2tRqS4eLp|M1,4DR"
+            "raw": "S4,9:M3,5DeLpN2tRqS4eLp|M1,4DR",
+            "type": "digit"
+        },
+        ":": {
+            "name": "colon",
+            "raw": "S1,9:S2DS|S5DS",
+            "type": "symbol"
+        },
+        ";": {
+            "name": "semicolon",
+            "raw": "S2,9:M1,2DS|M1,6De",
+            "type": "symbol"
+        },
+        "=": {
+            "name": "equal",
+            "raw": "S3,9:S4DR2|S5DR2",
+            "type": "symbol"
+        },
+        "?": {
+            "name": "question",
+            "raw": "S4,9:SDtRqSeLS|M1,5DS",
+            "type": "symbol"
+        },
+        "\\": {
+            "name": "backslash",
+            "raw": "S3,9:S2Dq2,5",
+            "type": "symbol"
         },
         "a": {
-            "raw": "S4,9:M3,2DS4|R3S3DpLeS2qRt"
+            "raw": "S4,9:M3,2DS4|R3S3DpLeS2qRt",
+            "type": "letter"
         },
         "b": {
-            "raw": "S4,9:DS6|S3DtRqS2eLp"
+            "raw": "S4,9:DS6|S3DtRqS2eLp",
+            "type": "letter"
         },
         "c": {
-            "raw": "S4,9:M3,3DpLeS2qRt"
+            "raw": "S4,9:M3,3DpLeS2qRt",
+            "type": "letter"
         },
         "d": {
-            "raw": "S4,9:M3,0DS6|R3S3DpLeS2qRt"
+            "raw": "S4,9:M3,0DS6|R3S3DpLeS2qRt",
+            "type": "letter"
         },
         "e": {
-            "raw": "S4,9:M1,4DRtpLeS2qRt"
+            "raw": "S4,9:M1,4DRtpLeS2qRt",
+            "type": "letter"
         },
         "f": {
-            "raw": "S2,9:M0,6DN5t|M0,2DR"
+            "raw": "S2,9:M0,6DN5t|M0,2DR",
+            "type": "letter"
         },
         "g": {
-            "raw": "S4,9:M3,5DeLpN2tRqS4eLp"
+            "raw": "S4,9:M3,5DeLpN2tRqS4eLp",
+            "type": "letter"
         },
         "h": {
-            "raw": "S4,9:DS6|M0,3DtRqS3"
+            "raw": "S4,9:DS6|M0,3DtRqS3",
+            "type": "letter"
         },
         "i": {
-            "raw": "S1,9:M0,2DS6|DS"
+            "raw": "S1,9:M0,2DS6|DS",
+            "type": "letter"
         },
         "j": {
-            "raw": "S3,9:M2,2DS5ep|M2,0DS"
+            "raw": "S3,9:M2,2DS5ep|M2,0DS",
+            "type": "letter"
         },
         "k": {
-            "raw": "S3,9:DS6|S4Dt2|M1,3Dq1,3"
+            "raw": "S3,9:DS6|S4Dt2|M1,3Dq1,3",
+            "type": "letter"
         },
         "l": {
-            "raw": "S1,9:DS6"
+            "raw": "S1,9:DS6",
+            "type": "letter"
         },
         "m": {
-            "raw": "S7,9:S2DS4|S3DtRqS3|M3,3DtRqS3"
+            "raw": "S7,9:S2DS4|S3DtRqS3|M3,3DtRqS3",
+            "type": "letter"
         },
         "n": {
-            "raw": "S4,9:S2DS4|S3DtRqS3"
+            "raw": "S4,9:S2DS4|S3DtRqS3",
+            "type": "letter"
         },
         "o": {
-            "raw": "S4,9:q3DpLeS2qRtN2"
+            "raw": "S4,9:q3DpLeS2qRtN2",
+            "type": "letter"
         },
         "p": {
-            "raw": "S4,9:M3,2DS6|M3,3DpLeS2qRt"
+            "raw": "S4,9:M3,2DS6|M3,3DpLeS2qRt",
+            "type": "letter"
         },
         "r": {
-            "raw": "S3,9:S2DS4|S3DtR"
+            "raw": "S3,9:S2DS4|S3DtR",
+            "type": "letter"
         },
         "s": {
-            "raw": "S4,9:q3DpLeqRqeLp"
+            "raw": "S4,9:q3DpLeqRqeLp",
+            "type": "letter"
         },
         "t": {
-            "raw": "S2,9:DS6|S2DR"
+            "raw": "S2,9:DS6|S2DR",
+            "type": "letter"
         },
         "u": {
-            "raw": "S4,9:S2DS3qRt|M3,2DS4"
+            "raw": "S4,9:S2DS3qRt|M3,2DS4",
+            "type": "letter"
         },
         "v": {
-            "raw": "S3,9:S2DS2q1,2t1,2N2"
+            "raw": "S3,9:S2DS2q1,2t1,2N2",
+            "type": "letter"
         },
         "w": {
-            "raw": "S5,9:S2DS2q1,2tN|M2,5Dqt1,2N2"
+            "raw": "S5,9:S2DS2q1,2tN|M2,5Dqt1,2N2",
+            "type": "letter"
         },
         "x": {
-            "raw": "S5,9:S2Dq4,5|M4,2De4,5"
+            "raw": "S5,9:S2Dq4,5|M4,2De4,5",
+            "type": "letter"
         },
         "y": {
-            "raw": "S4,9:S2DS3qRt|M3,2DS5eLp"
+            "raw": "S4,9:S2DS3qRt|M3,2DS5eLp",
+            "type": "letter"
         },
         "z": {
-            "raw": "S4,9:S2DR3e3,4R3"
+            "raw": "S4,9:S2DR3e3,4R3",
+            "type": "letter"
         }
     }
 }

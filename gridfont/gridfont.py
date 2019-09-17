@@ -91,7 +91,7 @@ class Gridfont():
           _assert_symbol_size(w, h, paths)
         o['paths'] = paths
         o['num'] = len(paths)
-        print('        w {:d} h {:d} # {:d}'.format(w, h, len(paths)))
+        print('  --> w {:d} h {:d} # {:d}'.format(w, h, len(paths)))
       except Exception as e:
         print('symb error: {:s} --- {}'.format(symb, e))
     return self
@@ -99,7 +99,8 @@ class Gridfont():
   def save_svg(self, out):
     print('writing svgs to:', out)
     for symb, o in self.symbols.items():
-      fn = '{:s}/symb_{:s}.svg'.format(out, symb)
+      name = o['name'] if 'name' in o else symb
+      fn = '{:s}/symb_{:s}.svg'.format(out, name)
       try:
         draw_paths(fn, (o['w'], o['h']), o['paths'])
       except Exception as e:

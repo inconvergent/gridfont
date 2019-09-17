@@ -94,8 +94,7 @@ Then run the following to output the results to the directory `out`
 ## Todo
 
  - groups/pre-defined shapes?
- - group individual moves (to allow complex moves)
- - finish some common symbols .,;:?/!+-= etc,
+ - finish more common symbols ()[]#@ ...
  - use python Pathlib for paths
  - simple pair kerning instructions?
  - some ligatures?
