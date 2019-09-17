@@ -48,6 +48,36 @@
         "top": "H"
     },
     "symbols": {
+        "0": {
+            "raw": "S4,9:q3DQren2qREN2|M1,4DR"
+        },
+        "1": {
+            "raw": "S2,9:n3DEn4"
+        },
+        "2": {
+            "raw": "S4,9:n3DERqe3R3"
+        },
+        "3": {
+            "raw": "S4,9:n2DR3e2q2,1n2erQ"
+        },
+        "4": {
+            "raw": "S4,9:n2Dn2qR2|M3,2Dn6"
+        },
+        "5": {
+            "raw": "S4,9:M3,2Dr3n2R2qn2er2"
+        },
+        "6": {
+            "raw": "S4,9:M3,1DQren4qREN2Qre|M1,4DR"
+        },
+        "7": {
+            "raw": "S4,9:n2DR3e3,6"
+        },
+        "8": {
+            "raw": "S4,9:M1,3DQNERqnerenqRENQ"
+        },
+        "9": {
+            "raw": "S4,9:M3,5DerQN2ERqn4erQ|M1,4DR"
+        },
         "a": {
             "raw": "S4,9:M3,2Dn4|R3n3DQren2qRE"
         },
@@ -57,8 +87,71 @@
         "c": {
             "raw": "S4,9:M3,3DQren2qRE"
         },
-        "rnd": {
-            "raw": "S4,9:DM1,2qHWh"
+        "d": {
+            "raw": "S4,9:M3,0Dn6|R3n3DQren2qRE"
+        },
+        "e": {
+            "raw": "S4,9:M1,4DREQren2qRE"
+        },
+        "f": {
+            "raw": "S2,9:M0,6DN5E|M0,2DR"
+        },
+        "g": {
+            "raw": "S4,9:M3,5DerQN2ERqn4erQ"
+        },
+        "h": {
+            "raw": "S4,9:Dn6|M0,3DERqn3"
+        },
+        "i": {
+            "raw": "S1,9:M0,2Dn6|Dn"
+        },
+        "j": {
+            "raw": "S3,9:M2,2Dn5eQ|M2,0Dn"
+        },
+        "k": {
+            "raw": "S3,9:Dn6|n4DE2|M1,3Dq1,3"
+        },
+        "l": {
+            "raw": "S1,9:Dn6"
+        },
+        "m": {
+            "raw": "S7,9:n2Dn4|n3DERqn3|M3,3DERqn3"
+        },
+        "n": {
+            "raw": "S4,9:n2Dn4|n3DERqn3"
+        },
+        "o": {
+            "raw": "S4,9:q3DQren2qREN2"
+        },
+        "p": {
+            "raw": "S4,9:M3,2Dn6|M3,3DQren2qRE"
+        },
+        "r": {
+            "raw": "S3,9:n2Dn4|n3DER"
+        },
+        "s": {
+            "raw": "S4,9:q3DQreqRqerQ"
+        },
+        "t": {
+            "raw": "S2,9:Dn6|n2DR"
+        },
+        "u": {
+            "raw": "S4,9:n2Dn3qRE|M3,2Dn4"
+        },
+        "v": {
+            "raw": "S3,9:n2Dn2q1,2E1,2N2"
+        },
+        "w": {
+            "raw": "S5,9:n2Dn2q1,2EN|M2,5DqE1,2N2"
+        },
+        "x": {
+            "raw": "S5,9:n2Dq4,5|M4,2De4,5"
+        },
+        "y": {
+            "raw": "S4,9:n2Dn3qRE|M3,2Dn5erQ"
+        },
+        "z": {
+            "raw": "S4,9:n2DR3e3,4R3"
         }
     }
 }

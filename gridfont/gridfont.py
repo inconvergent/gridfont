@@ -72,33 +72,38 @@ class Gridfont():
     for path in paths:
       yield list(self._parse_path(bbox, path))
 
-  def parse(self):
+  def parse(self, lenient=False):
     print('parsing ...')
     for symb, o in self.symbols.items():
       try:
         raw = o['raw']
         info, raw_paths = raw.strip().split(':')
-        print('symb: {:s} {:s}'.format(symb, raw))
-        path_strings = list([r.strip() for r in raw_paths.strip().split('|')])
-        assert path_strings, 'must have at least one path'
         w, h = _parse_info(info)
-        paths = list(self._parse_paths((w, h), path_strings))
-        assert paths, 'failed to parse at least one path'
-        _assert_symbol_size(w, h, paths)
         o['w'] = w
         o['h'] = h
+        print('symb: {:s} {:s}'.format(symb, raw))
+        path_strings = list([r.strip() for r in raw_paths.strip().split('|')])
+        assert path_strings, 'definition must have at least one path'
+        paths = list(self._parse_paths((w, h), path_strings))
+        for p in paths:
+          assert p, 'at least one path is empty, did you forget D?'
+        if not lenient:
+          _assert_symbol_size(w, h, paths)
         o['paths'] = paths
         o['num'] = len(paths)
         print('        w {:d} h {:d} # {:d}'.format(w, h, len(paths)))
       except Exception as e:
-        print('symb error: {:s} --- {:s}'.format(symb, str(e)))
+        print('symb error: {:s} --- {}'.format(symb, e))
     return self
 
   def save_svg(self, out):
     print('writing svgs to:', out)
     for symb, o in self.symbols.items():
       fn = '{:s}/symb_{:s}.svg'.format(out, symb)
-      draw_paths(fn, (o['w'], o['h']), o['paths'])
+      try:
+        draw_paths(fn, (o['w'], o['h']), o['paths'])
+      except Exception as e:
+        print('svg err on symb: {:s}: {}'.format(symb, e))
     return self
 
   def save(self, out):

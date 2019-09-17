@@ -43,8 +43,8 @@ def _proc_arg(arg):
 def _assert_symbol_size(w, h, paths):
   for path in paths:
     for x, y in path:
-      assert 0 <= x < w, 'x is out of bounds'
-      assert 0 <= y < h, 'y is out of bounds'
+      assert 0 <= x < w, 'x is out of bounds: {:d}'.format(x)
+      assert 0 <= y < h, 'y is out of bounds: {:d}'.format(y)
   return True
 
 base_symbols = '0123456789,'

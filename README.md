@@ -79,8 +79,8 @@ position.
 
 ## Font
 
-The font (as it were) is (will be, once I finish it) included in
-`out/res.json`. The raw descriptions are in `dat/font.json`
+The font (as it were) is included in `out/res.json`. The raw descriptions are
+in `dat/font.json`
 
 
 ## Running the Code
@@ -99,8 +99,6 @@ Then run the following to output the results to the directory `out`
 
  - groups/pre-defined shapes?
  - group individual moves (to allow complex moves)
- - finish a-z characters
- - finish 0-9 characters
  - finish some common symbols .,;:?/!+-= etc,
  - use python Pathlib for paths
  - simple pair kerning instructions?

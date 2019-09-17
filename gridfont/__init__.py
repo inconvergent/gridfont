@@ -4,9 +4,11 @@
 """gridfont
 
 Usage:
-  gridfont <in> <out>
+  gridfont <in> <out> [--lenient]
 
 Options:
+
+  --lenient   ignore some asserts
 
   -h --help   show this screen.
   --version   show version.
@@ -33,7 +35,7 @@ def main():
   try:
     _in = args['<in>']
     _out = args['<out>']
-    font = Gridfont(_in).parse().save(_out)
+    font = Gridfont(_in).parse(lenient=args['--lenient']).save(_out)
     font.save_svg(_out)
 
   except Exception:
