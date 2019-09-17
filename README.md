@@ -1,5 +1,8 @@
-# Gridfont - grid-based font for (pen) plotting
+# Gridfont - grid-based drawing
 
+
+**NOTE: this code is incomplete, and it is not very likely to work at the
+moment.**
 
 Simple system for describing drawings/symbols on a regular grid. Including a
 simple single-line font with a few of the basic ascii characters.
@@ -9,7 +12,8 @@ The symbol descriptions look like this:
     S4,9:Dn6|n3DERqn2er
 
 The first section (left of `:`) is the `info` section. Which currently contains
-the size of the grid. Here the width is 4 and the height is 9.
+the size of the grid. Here the width is 4 and the height is 9. In time this
+section might contain other things.
 
 The next section is one or more paths, separated by the pipe symbol `|`.
 
@@ -60,14 +64,14 @@ otherwise the step size is 1.
 The following absolute moves are allowed
 
   - `Mx,y` to move to position `x,y` relative to the `origin`.
-  - W to move to move out to the right hand side of the drawing.
-  - w to move to the left.
-  - H to move to the top of the drawing.
-  - h to move to the bottom of the drawing.
+  - `W` to move to move out to the right hand side of the drawing.
+  - `w` to move to the left side of the drawing.
+  - `H` to move to the top of the drawing.
+  - `h` to move to the bottom of the drawing.
 
 
-*(The following is incomplete. For this to work the spec requires grouping
-commands to avoid accumulating the path for individual commands.)*
+**(The following is incomplete. For this to work the spec requires grouping
+commands to avoid accumulating the path for individual commands.)**
 
 As an example, you can use `hW` to move to the lower right hand corner from any
 position.
@@ -79,18 +83,30 @@ The font (as it were) is (will be, once I finish it) included in
 `dat/font-parsed.json`. The raw descriptions are in `dat/font.json`
 
 
+## Running the Code
+
+In order to parse a `json` file such as `dat/font.json` you can install
+the this library.
+
+    python3 setup.py install --user
+
+Then run the following to output the result to `res.json`
+
+    gridfont dat/font.json dat/res.json
+
+
 ## TODO
 
-    groups/pre-defined shapes?
-    group individual moves (to allow complex moves)
-    draw paths as svg (for debug etc.)
-    add W/w/H/h commands
-    finish a-z characters
-    finish 0-9 characters
-    finish some common symbols .,;:?/!+-= etc,
+ - groups/pre-defined shapes?
+ - group individual moves (to allow complex moves)
+ - draw paths as svg (for debug etc.)
+ - add W/w/H/h commands
+ - finish a-z characters
+ - finish 0-9 characters
+ - finish some common symbols .,;:?/!+-= etc,
 
-    simple pair kerning instructions?
-    some ligatures?
+ - simple pair kerning instructions?
+ - some ligatures?
 
 
 ## References
