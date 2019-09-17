@@ -80,7 +80,7 @@ position.
 ## Font
 
 The font (as it were) is (will be, once I finish it) included in
-`dat/font-parsed.json`. The raw descriptions are in `dat/font.json`
+`out/res.json`. The raw descriptions are in `dat/font.json`
 
 
 ## Running the Code

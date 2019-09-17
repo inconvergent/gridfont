@@ -2,6 +2,7 @@
 
 from json import load
 
+from .draw import draw_paths
 from .helpers import _assert_symbol_size
 from .helpers import _assert_valid_cmds
 from .helpers import _get_all_commands
@@ -94,7 +95,15 @@ class Gridfont():
         print('symb error: {:s} --- {:s}'.format(symb, str(e)))
     return self
 
-  def save(self, fn):
+  def save_svg(self, out):
+    for symb, o in self.symbols.items():
+      fn = '{:s}/symb_{:s}.svg'.format(out, symb)
+      print('writing: ', fn)
+      draw_paths(fn, (o['w']-1, o['h']-1), o['paths'])
+    return self
+
+  def save(self, out):
+    fn = '{:s}/res.json'.format(out)
     print('writing:', fn)
     with open(fn, 'w') as f:
       pwrite(self.symbols, f)

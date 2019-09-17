@@ -11,8 +11,9 @@ Options:
   -h --help   show this screen.
   --version   show version.
 
+
 Examples:
-  gridfont
+  gridfont input_file.json output_path
 """
 
 
@@ -33,6 +34,7 @@ def main():
     _in = args['<in>']
     _out = args['<out>']
     font = Gridfont(_in).parse().save(_out)
+    font.save_svg(_out)
 
   except Exception:
     traceback.print_exc(file=sys.stdout)

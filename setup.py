@@ -12,7 +12,7 @@ setup(name='font',
       license='MIT License',
       author='Anders Hoff',
       author_email='inconvergent@gmail.com',
-      install_requires=['docopt'],
+      install_requires=['docopt', 'svgwrite'],
       packages=find_packages(),
       entry_points={'console_scripts': ['gridfont=gridfont:main']},
       zip_safe=True
