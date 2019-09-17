@@ -100,7 +100,6 @@ Then run the following to output the result to `res.json`
  - groups/pre-defined shapes?
  - group individual moves (to allow complex moves)
  - draw paths as svg (for debug etc.)
- - add W/w/H/h commands
  - finish a-z characters
  - finish 0-9 characters
  - finish some common symbols .,;:?/!+-= etc,
