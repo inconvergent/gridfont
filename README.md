@@ -1,4 +1,4 @@
-# Gridfont - grid-based drawing
+# Gridfont - Grid-based Drawing
 
 
 **NOTE: this code is incomplete, and it is not very likely to work at the
@@ -9,7 +9,7 @@ simple single-line font with a few of the basic ascii characters.
 
 The symbol descriptions look like this:
 
-    S4,9:Dn6|n3DERqn2erQ
+    S4,9:DS6|S3DtRqS2eLp
 
 The first section (left of `:`) is the `info` section. Which currently contains
 the size of the grid. Here the width is 4 and the height is 9. In time this
@@ -45,24 +45,24 @@ entered the path will start being drawn. Which means you can move the cursor
 into position before starting each path.
 
 
-### Relative motions
+### Relative Moves
 
 The following commands are allowed:
 
-     Q   N   E
+     p   N   t
        \ | /
-     r - o - R    <-- o is the current position of the cursor
+     L - o - R    <-- o is the current position of the cursor
        / | \
-     e   n   q
+     e   S   q
 
 Any integer after a direction command is interpreted as the length of the step,
 otherwise the step size is 1. You can also use two integers separated by a
 comma. For instance `q2,3` will move the cursor two steps to the right, and
-three steps down. Similarly `Q2,3` will move the cursor two steps left, and
+three steps down. Similarly `p2,3` will move the cursor two steps left, and
 three steps up.
 
 
-### Absolute moves
+### Absolute Moves
 
 The following absolute moves are allowed
 
@@ -91,7 +91,7 @@ Then run the following to output the results to the directory `out`
     gridfont dat/font.json out
 
 
-## TODO
+## Todo
 
  - groups/pre-defined shapes?
  - group individual moves (to allow complex moves)
