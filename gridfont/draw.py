@@ -17,7 +17,7 @@ def _svgiter(path):
   for p in path[1:]:
     yield 'L{},{} '.format(*p)
 
-def tosvgpath(path, pad, closed=False):
+def tosvgpath(path, pad=(0, 0), closed=False):
   res = ''.join(_svgiter(list(_shift(path, pad)))).strip()
   if closed:
     return '{:s}Z'.format(res)
