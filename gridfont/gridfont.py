@@ -35,18 +35,19 @@ class Gridfont():
       self.tokfx = _get_tokenizer(cmd)
     return self
 
-  # TODO: restructure this?
   def _do_cmd(self, state, bbox, cmd, arg):
     if cmd == self.special['abs_move']:
       return arg[0], arg[1], state[-1]
     if cmd == self.special['pen_down']:
       return state[0], state[1], True
 
+    # move x
     if cmd == self.special['left']:
       return 0, state[1], state[-1]
     if cmd == self.special['right']:
-      return state[0], bbox[0]-1, state[-1]
+      return bbox[0]-1, state[1], state[-1]
 
+    # move y
     if cmd == self.special['top']:
       return state[0], 0, state[-1]
     if cmd == self.special['bottom']:
@@ -79,8 +80,10 @@ class Gridfont():
         raw = o['raw']
         info, raw_paths = raw.strip().split(':')
         w, h = _parse_info(info)
-        o['w'] = w
-        o['h'] = h
+        o['gw'] = w
+        o['gh'] = h
+        o['w'] = w-1
+        o['h'] = h-1
         print('symb: {:s} {:s}'.format(symb, raw))
         path_strings = list([r.strip() for r in raw_paths.strip().split('|')])
         assert path_strings, 'definition must have at least one path'
@@ -91,27 +94,46 @@ class Gridfont():
           _assert_symbol_size(w, h, paths)
         o['paths'] = paths
         o['num'] = len(paths)
+        o['ord'] = ord(symb)
         print('  --> w {:d} h {:d} # {:d}'.format(w, h, len(paths)))
       except Exception as e:
         print('symb error: {:s} --- {}'.format(symb, e))
     return self
 
-  def save_svg(self, out):
+  def scale(self, s):
+    # TODO: don't scale inplace?
+    for o in self.symbols.values():
+      w = o['w']
+      h = o['h']
+      new_paths = []
+      for path in o['paths']:
+        new_path = []
+        for x, y in path:
+          xx = s*(x-w*0.5)+w*0.5*s
+          yy = s*(y-h*0.5)+h*0.5*s
+          new_path.append((xx, yy))
+        new_paths.append(new_path)
+      o['w'] = w*s
+      o['h'] = h*s
+      o['paths'] = new_paths
+    return self
+
+  def save_svg(self, out, pad=(0, 0), sw=0.1):
     print('writing svgs to:', out)
     for symb, o in self.symbols.items():
       name = o['name'] if 'name' in o else symb
       _type = o['type'] if 'type' in o else 'symb'
-      fn = '{:s}/{:s}_{:s}.svg'.format(out, _type, name)
+      fn = out.joinpath('{:s}_{:s}.svg'.format(_type, name))
       try:
-        draw_paths(fn, (o['w'], o['h']), o['paths'])
+        draw_paths(fn, (o['w'], o['h']), o['paths'], pad, sw=sw)
       except Exception as e:
         print('svg err on symb: {:s}: {}'.format(symb, e))
     return self
 
   def save(self, out):
-    fn = '{:s}/res.json'.format(out)
+    fn = out.joinpath('res.json')
     print('writing:', fn)
-    with open(fn, 'w') as f:
+    with open(str(fn), 'w') as f:
       pwrite(self.symbols, f)
     return self
 

@@ -48,9 +48,19 @@
             "raw": "S1,9:DS4|S5DS",
             "type": "symbol"
         },
+        "(": {
+            "name": "leftpar",
+            "raw": "S2,9:qDeS3q",
+            "type": "symbol"
+        },
+        ")": {
+            "name": "rightpar",
+            "raw": "S2,9:SDqS3e",
+            "type": "symbol"
+        },
         "*": {
-            "name": "star",
-            "raw": "S3,9:S4DR2|M1,3DS2|S3Dq2|S5Dt2",
+            "name": "asterisk",
+            "raw": "S3,9:M1,3DS|S3.75Dq1,0.25t1,0.25|M0.25,5Dt0.75,1q0.75,1",
             "type": "symbol"
         },
         "+": {
@@ -107,7 +117,7 @@
             "type": "digit"
         },
         "7": {
-            "raw": "S4,9:S2DR3e3,6",
+            "raw": "S4,9:S2DWe3,6",
             "type": "digit"
         },
         "8": {
@@ -130,7 +140,7 @@
         },
         "=": {
             "name": "equal",
-            "raw": "S3,9:S4DR2|S5DR2",
+            "raw": "S3,9:S3.5DR2|S5DR2",
             "type": "symbol"
         },
         "?": {
@@ -138,9 +148,19 @@
             "raw": "S4,9:SDtRqSeLS|M1,5DS",
             "type": "symbol"
         },
+        "[": {
+            "name": "leftbracket",
+            "raw": "S2,9:qDLS5R",
+            "type": "symbol"
+        },
         "\\": {
             "name": "backslash",
             "raw": "S3,9:S2Dq2,5",
+            "type": "symbol"
+        },
+        "]": {
+            "name": "rightbracket",
+            "raw": "S2,9:SDRS5L",
             "type": "symbol"
         },
         "a": {
@@ -204,7 +224,7 @@
             "type": "letter"
         },
         "p": {
-            "raw": "S4,9:M3,2Dh|M3,3DpLeS2qRt",
+            "raw": "S4,9:S2Dh|S3DtRqS2eLp",
             "type": "letter"
         },
         "q": {
@@ -228,11 +248,11 @@
             "type": "letter"
         },
         "v": {
-            "raw": "S3,9:S2DS2q1,2t1,2N2",
+            "raw": "S4,9:S2Dq1.5,4t1.5,4",
             "type": "letter"
         },
         "w": {
-            "raw": "S5,9:S2DS2q1,2tN|M2,5Dqt1,2N2",
+            "raw": "S5,9:S2D q1,4 t1,4 q1,4 t1,4",
             "type": "letter"
         },
         "x": {
@@ -244,7 +264,7 @@
             "type": "letter"
         },
         "z": {
-            "raw": "S4,9:S2DR3e3,4R3",
+            "raw": "S4,9:S2DWe3,4W",
             "type": "letter"
         }
     }

@@ -21,6 +21,7 @@ Examples:
 
 __ALL__ = ['Gridfont']
 
+from pathlib import Path
 import sys
 import traceback
 
@@ -31,12 +32,13 @@ from .gridfont import Gridfont
 
 
 def main():
-  args = docopt(__doc__, version='gridfont 0.0.1')
+  args = docopt(__doc__, version='gridfont 0.1.0')
   try:
-    _in = args['<in>']
-    _out = args['<out>']
+    _in = Path(args['<in>'])
+    _out = Path(args['<out>'])
     font = Gridfont(_in).parse(lenient=args['--lenient']).save(_out)
-    font.save_svg(_out)
+    font.scale(20)
+    font.save_svg(_out, pad=(2, 2), sw=2)
 
   except Exception:
     traceback.print_exc(file=sys.stdout)

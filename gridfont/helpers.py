@@ -13,7 +13,7 @@ def _get_all_commands(compass, special):
   return cmd
 
 def _get_tokenizer(cmd):
-  r = re_compile(r'[{:s}][0-9,]*'.format(''.join(cmd)))
+  r = re_compile(r'[{:s}][0-9,.]*'.format(''.join(cmd)))
   return lambda p: [x.group(0) for x in r.finditer(p)]
 
 
@@ -34,20 +34,20 @@ def _proc_tok(tok):
 
 def _proc_arg(arg):
   if not arg:
-    return 1
+    return 1.0
   if ',' in arg:
-    return tuple([int(a) for a in arg.split(',')])
-  return int(arg)
+    return tuple([float(a) for a in arg.split(',')])
+  return float(arg)
 
 
 def _assert_symbol_size(w, h, paths):
   for path in paths:
     for x, y in path:
-      assert 0 <= x < w, 'x is out of bounds: {:d}'.format(x)
-      assert 0 <= y < h, 'y is out of bounds: {:d}'.format(y)
+      assert 0 <= x < w, 'x is out of bounds: {}'.format(x)
+      assert 0 <= y < h, 'y is out of bounds: {}'.format(y)
   return True
 
-base_symbols = '0123456789,'
+base_symbols = '0123456789, .'
 def _assert_valid_cmds(cmd, path):
   for p in path:
     assert p in cmd or p in base_symbols, 'not a valid command: {:s}'.format(p)

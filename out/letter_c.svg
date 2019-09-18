@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<svg baseProfile="tiny" height="11" version="1.2" width="6" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg baseProfile="tiny" height="164" version="1.2" width="64" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs/>
-  <path d="M1,1 L4,1 L4,9 L1,9Z" fill="none" stroke="cyan" stroke-width="0.1"/>
-  <path d="M4,4 L3,3 L2,3 L1,4 L1,6 L2,7 L3,7 L4,6" fill="none" stroke="black" stroke-width="0.2"/>
+  <path d="M2,2 L62,2 L62,162 L2,162Z" fill="none" stroke="cyan" stroke-width="2"/>
+  <path d="M62.0,62.0 L42.0,42.0 L22.0,42.0 L2.0,62.0 L2.0,102.0 L22.0,122.0 L42.0,122.0 L62.0,102.0" fill="none" stroke="black" stroke-width="2"/>
 </svg>
