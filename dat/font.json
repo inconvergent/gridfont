@@ -85,7 +85,7 @@
         },
         "/": {
             "name": "slash",
-            "raw": "S3,9:M2,2De2,5",
+            "raw": "S3,9:M2,2De2,4",
             "type": "symbol"
         },
         "0": {
@@ -155,7 +155,7 @@
         },
         "\\": {
             "name": "backslash",
-            "raw": "S3,9:S2Dq2,5",
+            "raw": "S3,9:S2Dq2,4",
             "type": "symbol"
         },
         "]": {
