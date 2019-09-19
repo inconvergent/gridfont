@@ -1,5 +1,6 @@
 # Gridfont - Grid-based Drawing
 
+![font sample](img/font.svg)
 
 **NOTE: this code is a work in progress, and it might change at any moment.
 Let me know if you find this system useful. I might be more careful with
