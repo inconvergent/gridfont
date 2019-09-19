@@ -11,6 +11,7 @@ from .helpers import _parse_info
 from .helpers import _proc_tok
 from .helpers import _rel_move
 from .utils import pwrite
+from .utils import show_exception
 
 
 class Gridfont():
@@ -35,11 +36,15 @@ class Gridfont():
       self.tokfx = _get_tokenizer(cmd)
     return self
 
-  def _do_cmd(self, state, bbox, cmd, arg):
+  def _do_cmd(self, start, state, bbox, cmd, arg):
     if cmd == self.special['abs_move']:
       return arg[0], arg[1], state[-1]
     if cmd == self.special['pen_down']:
       return state[0], state[1], True
+
+    # start
+    if cmd == self.special['start']:
+      return start[0], start[1], state[-1]
 
     # move x
     if cmd == self.special['left']:
@@ -57,51 +62,63 @@ class Gridfont():
       npx, npy = _rel_move(state, self.compass[cmd], arg)
       return npx, npy, state[-1]
 
-    raise ValueError('encountered invalid command.')
+    raise ValueError('encountered invalid command: {}'.format(cmd))
 
   def _parse_path(self, bbox, path):
     state = (0, 0, False)
     _assert_valid_cmds(self.all_commands, path)
+    res = []
     for tok in self.tokfx(path):
       cmd, arg = _proc_tok(tok)
-      state = self._do_cmd(state, bbox, cmd, arg)
+      state = self._do_cmd(res[0] if res else (0, 0), state, bbox, cmd, arg)
       x, y, pen = state
       if pen:
-        yield x, y
+        res.append((x, y))
+    return res
 
   def _parse_paths(self, bbox, paths):
     for path in paths:
-      yield list(self._parse_path(bbox, path))
+      yield self._parse_path(bbox, path)
+
+  def _parse_path_raw_paths(self, w, h, raw_paths, lenient=False):
+    path_strings = list([r.strip() for r in raw_paths.strip().split('|')])
+    if len(path_strings) == 1 and not path_strings[0]:
+      # empty path definition. this is ok
+      return []
+    assert path_strings, 'definition must have at least one path'
+    paths = list(self._parse_paths((w, h), path_strings))
+    for p in paths:
+      assert p, 'at least one path is empty, did you forget D?'
+    if not lenient:
+      _assert_symbol_size(w, h, paths)
+    return paths
 
   def parse(self, lenient=False):
     print('parsing ...')
     for symb, o in self.symbols.items():
       try:
         raw = o['raw']
-        info, raw_paths = raw.strip().split(':')
+        raw_split = raw.strip().split(':')
+        assert len(raw_split) > 1,\
+            'path definition must be on the format info:paths'
+        info, raw_paths = raw_split
         w, h = _parse_info(info)
-        o['gw'] = w
-        o['gh'] = h
-        o['w'] = w-1
-        o['h'] = h-1
+        paths = self._parse_path_raw_paths(w, h, raw_paths, lenient)
+        o.update({
+            'gw': w, 'gh': h,
+            'w': w-1, 'h': h-1,
+            'paths': paths,
+            'ord': ord(symb),
+            'num': len(paths)})
         print('symb: {:s} {:s}'.format(symb, raw))
-        path_strings = list([r.strip() for r in raw_paths.strip().split('|')])
-        assert path_strings, 'definition must have at least one path'
-        paths = list(self._parse_paths((w, h), path_strings))
-        for p in paths:
-          assert p, 'at least one path is empty, did you forget D?'
-        if not lenient:
-          _assert_symbol_size(w, h, paths)
-        o['paths'] = paths
-        o['num'] = len(paths)
-        o['ord'] = ord(symb)
-        print('  --> w {:d} h {:d} # {:d}'.format(w, h, len(paths)))
+        print('  --> w {:d} h {:d} # {:d}\n'.format(w, h, len(paths)))
+      except AssertionError as e:
+        print('!error: {:s} --- {}'.format(symb, e))
       except Exception as e:
-        print('symb error: {:s} --- {}'.format(symb, e))
+        show_exception()
     return self
 
   def scale(self, s):
-    # TODO: don't scale inplace?
     for o in self.symbols.values():
       w = o['w']
       h = o['h']
@@ -127,7 +144,8 @@ class Gridfont():
       try:
         draw_paths(fn, (o['w'], o['h']), o['paths'], pad, sw=sw)
       except Exception as e:
-        print('svg err on symb: {:s}: {}'.format(symb, e))
+        print('!svg err on symb: {:s}: {}'.format(symb, e))
+        show_exception()
     return self
 
   def save(self, out):

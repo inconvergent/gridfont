@@ -40,9 +40,15 @@
         "left": "w",
         "pen_down": "D",
         "right": "W",
+        "start": "Z",
         "top": "H"
     },
     "symbols": {
+        " ": {
+            "name": "space",
+            "raw": "S2,9:",
+            "type": "symbol"
+        },
         "!": {
             "name": "exclaim",
             "raw": "S1,9:DS4|S5DS",
@@ -89,7 +95,7 @@
             "type": "symbol"
         },
         "0": {
-            "raw": "S4,9:q3DpLeS2qRtN2|M1,4DR",
+            "raw": "S4,9:q3DpLeS2qRtZ|M1,4DR",
             "type": "digit"
         },
         "1": {
@@ -121,7 +127,7 @@
             "type": "digit"
         },
         "8": {
-            "raw": "S4,9:M1,3DpNtRqSeLeSqRtNp",
+            "raw": "S4,9:M1,3DpNtRqSeLeSqRtNZ",
             "type": "digit"
         },
         "9": {
@@ -220,7 +226,7 @@
             "type": "letter"
         },
         "o": {
-            "raw": "S4,9:q3DpLeS2qRtN2",
+            "raw": "S4,9:q3DpLeS2qRtZ",
             "type": "letter"
         },
         "p": {

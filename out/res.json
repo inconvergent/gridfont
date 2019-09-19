@@ -1,4 +1,16 @@
 {
+  " ": {
+    "gh": 9,
+    "gw": 2,
+    "h": 8,
+    "name": "space",
+    "num": 0,
+    "ord": 32,
+    "paths": [],
+    "raw": "S2,9:",
+    "type": "symbol",
+    "w": 1
+  },
   "!": {
     "gh": 9,
     "gw": 1,
@@ -326,7 +338,7 @@
         ]
       ]
     ],
-    "raw": "S4,9:q3DpLeS2qRtN2|M1,4DR",
+    "raw": "S4,9:q3DpLeS2qRtZ|M1,4DR",
     "type": "digit",
     "w": 3
   },
@@ -693,12 +705,12 @@
           4.0
         ],
         [
-          2.0,
+          1.0,
           3.0
         ]
       ]
     ],
-    "raw": "S4,9:M1,3DpNtRqSeLeSqRtNp",
+    "raw": "S4,9:M1,3DpNtRqSeLeSqRtNZ",
     "type": "digit",
     "w": 3
   },
@@ -1717,7 +1729,7 @@
         ]
       ]
     ],
-    "raw": "S4,9:q3DpLeS2qRtN2",
+    "raw": "S4,9:q3DpLeS2qRtZ",
     "type": "letter",
     "w": 3
   },
