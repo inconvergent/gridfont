@@ -1,4 +1,4 @@
-# Gridfont - Grid-based Drawing
+# Gridfont - Grid-based Font System
 
 ![font sample](img/font.svg)
 
@@ -6,8 +6,8 @@
 Let me know if you find this system useful. I might be more careful with
 updates if I know someone are actually trying to use it.**
 
-Simple system for describing drawings/symbols on a regular grid. Including a
-simple single-line font with a few of the basic ascii characters.
+grid-based system for designing simple symbols and fonts. including an example
+font. Mainly intended for plotter drawings.
 
 The symbol descriptions look like this:
 
