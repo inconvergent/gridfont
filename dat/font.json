@@ -54,6 +54,16 @@
             "raw": "S1,9:DS4|S5DS",
             "type": "symbol"
         },
+        "#": {
+            "name": "hash",
+            "raw": "S3,9:M1,2De1,4|M2De1,4| M0.25,3.5DR1.75| M0,4.5DR1.75",
+            "type": "symbol"
+        },
+        "%": {
+            "name": "percent",
+            "raw": "S4,9:M3,2De3,4 | M0.5,2.5D q0.5e0.5p0.5Z| M2.5,4.5 Dq0.5e0.5p0.5Z",
+            "type": "symbol"
+        },
         "(": {
             "name": "leftpar",
             "raw": "S2,9:qDeS4q",
@@ -144,9 +154,19 @@
             "raw": "S2,9:M1,2DS|M1,6De",
             "type": "symbol"
         },
+        "<": {
+            "name": "lt",
+            "raw": "S3,9:M2,3De2,1q2,1",
+            "type": "symbol"
+        },
         "=": {
             "name": "equal",
             "raw": "S3,9:S3.5DR2|S4.5DR2",
+            "type": "symbol"
+        },
+        ">": {
+            "name": "gt",
+            "raw": "S3,9:S3Dq2,1e2,1",
             "type": "symbol"
         },
         "?": {
@@ -272,6 +292,11 @@
         "z": {
             "raw": "S4,9:S2DWe3,4W",
             "type": "letter"
+        },
+        "|": {
+            "name": "pipe",
+            "raw": "S1,9:S1DS6",
+            "type": "symbol"
         }
     }
 }
