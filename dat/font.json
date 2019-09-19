@@ -54,6 +54,21 @@
             "raw": "S1,9:DS4|S5DS",
             "type": "symbol"
         },
+        "~": {
+            "name": "tilde",
+            "raw": "S4,9:S4.5D t0.5,1R0.5qR0.5t0.5,1",
+            "type": "symbol"
+        },
+        "'": {
+            "name": "tick",
+            "raw": "S1,9:S1DS1.5",
+            "type": "symbol"
+        },
+        "\"": {
+            "name": "doubletick",
+            "raw": "S2,9:S1DS1.5|M1DS1.5",
+            "type": "symbol"
+        },
         "#": {
             "name": "hash",
             "raw": "S3,9:M1,2De1,4|M2De1,4| M0.25,3.5DR1.75| M0,4.5DR1.75",
@@ -92,6 +107,16 @@
         "-": {
             "name": "dash",
             "raw": "S3,9:S4DR2",
+            "type": "symbol"
+        },
+        "_": {
+            "name": "underscore",
+            "raw": "S3,9:S6DR2",
+            "type": "symbol"
+        },
+        "^": {
+            "name": "hat",
+            "raw": "S4,9:S4Dt1.5,2q1.5,2",
             "type": "symbol"
         },
         ".": {
