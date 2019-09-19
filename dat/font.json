@@ -56,12 +56,12 @@
         },
         "(": {
             "name": "leftpar",
-            "raw": "S2,9:qDeS3q",
+            "raw": "S2,9:qDeS4q",
             "type": "symbol"
         },
         ")": {
             "name": "rightpar",
-            "raw": "S2,9:SDqS3e",
+            "raw": "S2,9:SDqS4e",
             "type": "symbol"
         },
         "*": {
@@ -91,11 +91,11 @@
         },
         "/": {
             "name": "slash",
-            "raw": "S3,9:M2,2De2,4",
+            "raw": "S3,9:M2,1De2,6",
             "type": "symbol"
         },
         "0": {
-            "raw": "S4,9:q3DpLeS2qRtZ|M1,4DR",
+            "raw": "S4,9:q3DpLeS2qRtZ|M2.5,2.5De2,3",
             "type": "digit"
         },
         "1": {
@@ -119,7 +119,7 @@
             "type": "digit"
         },
         "6": {
-            "raw": "S4,9:M3,1DpLeS4qRtN2pLe|M1,4DR",
+            "raw": "S4,9:M3,1DpLeS4qRtN2pLe",
             "type": "digit"
         },
         "7": {
@@ -127,11 +127,11 @@
             "type": "digit"
         },
         "8": {
-            "raw": "S4,9:M1,3DpNtRqSeLeSqRtNZ",
+            "raw": "S4,9:M1,3DpNtRqSeLeSqRtNp",
             "type": "digit"
         },
         "9": {
-            "raw": "S4,9:M3,5DeLpN2tRqS4eLp|M1,4DR",
+            "raw": "S4,9:M3,5DeLpN2tRqS4eLp",
             "type": "digit"
         },
         ":": {
@@ -146,7 +146,7 @@
         },
         "=": {
             "name": "equal",
-            "raw": "S3,9:S3.5DR2|S5DR2",
+            "raw": "S3,9:S3.5DR2|S4.5DR2",
             "type": "symbol"
         },
         "?": {
@@ -156,17 +156,17 @@
         },
         "[": {
             "name": "leftbracket",
-            "raw": "S2,9:qDLS5R",
+            "raw": "S2,9:qDLS6R",
             "type": "symbol"
         },
         "\\": {
             "name": "backslash",
-            "raw": "S3,9:S2Dq2,4",
+            "raw": "S3,9:S1Dq2,6",
             "type": "symbol"
         },
         "]": {
             "name": "rightbracket",
-            "raw": "S2,9:SDRS5L",
+            "raw": "S2,9:SDRS6L",
             "type": "symbol"
         },
         "a": {
@@ -194,7 +194,7 @@
             "type": "letter"
         },
         "g": {
-            "raw": "S4,9:M3,5DeLpN2tRqS4eLp",
+            "raw": "S4,9:R3S3DpLeS2qRt|M3,2DS5eL",
             "type": "letter"
         },
         "h": {
@@ -206,7 +206,7 @@
             "type": "letter"
         },
         "j": {
-            "raw": "S3,9:M2,2DS5ep|M2,0DS",
+            "raw": "S2,9:M1,2DS5e|M1,0DS",
             "type": "letter"
         },
         "k": {
@@ -266,7 +266,7 @@
             "type": "letter"
         },
         "y": {
-            "raw": "S4,9:S2DS3qRt|M3,2DS5eLp",
+            "raw": "S4,9:S2Dq1.5,4|M3,2De1.5,4e0.5,1e",
             "type": "letter"
         },
         "z": {

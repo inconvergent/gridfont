@@ -38,7 +38,9 @@ class Gridfont():
 
   def _do_cmd(self, start, state, bbox, cmd, arg):
     if cmd == self.special['abs_move']:
-      return arg[0], arg[1], state[-1]
+      if isinstance(arg, (tuple, list)):
+        return arg[0], arg[1], state[-1]
+      return arg, arg, state[-1]
     if cmd == self.special['pen_down']:
       return state[0], state[1], True
 
@@ -110,10 +112,10 @@ class Gridfont():
             'paths': paths,
             'ord': ord(symb),
             'num': len(paths)})
-        print('symb: {:s} {:s}'.format(symb, raw))
-        print('  --> w {:d} h {:d} # {:d}\n'.format(w, h, len(paths)))
+        print('\nsymb: {:s} {:s}'.format(symb, raw))
+        print('  --> w {:d} h {:d} # {:d}'.format(w, h, len(paths)))
       except AssertionError as e:
-        print('!error: {:s} --- {}'.format(symb, e))
+        print('\n!error: {:s} --- {}'.format(symb, e))
       except Exception as e:
         show_exception()
     return self
