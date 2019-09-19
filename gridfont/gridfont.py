@@ -24,7 +24,7 @@ class Gridfont():
       jsn = load(f)
       self.special = jsn['special']
 
-      # note: these structures are manipulated in place
+      # note: these structures are manipulated in-place
       self.groups = jsn['groups']
       self.symbols = jsn['symbols']
       self.compass = jsn['compass']
@@ -32,15 +32,20 @@ class Gridfont():
       cmd = _get_all_commands(self.compass, list(self.special.values()))
       self.all_commands = cmd
 
-      # path definition tokenizer
       self.tokfx = _get_tokenizer(cmd)
     return self
 
   def _do_cmd(self, start, state, bbox, cmd, arg):
+    if cmd in self.compass:
+      npx, npy = _rel_move(state, self.compass[cmd], arg)
+      return npx, npy, state[-1]
+
+    # below code messy and inefficient, but good enough for now
     if cmd == self.special['abs_move']:
       if isinstance(arg, (tuple, list)):
         return arg[0], arg[1], state[-1]
       return arg, arg, state[-1]
+
     if cmd == self.special['pen_down']:
       return state[0], state[1], True
 
@@ -60,11 +65,7 @@ class Gridfont():
     if cmd == self.special['bottom']:
       return state[0], bbox[1]-1, state[-1]
 
-    if cmd in self.compass:
-      npx, npy = _rel_move(state, self.compass[cmd], arg)
-      return npx, npy, state[-1]
-
-    raise ValueError('encountered invalid command: {}'.format(cmd))
+    raise ValueError('encountered invalid command: {:s}'.format(cmd))
 
   def _parse_path(self, bbox, path):
     state = (0, 0, False)
@@ -128,13 +129,9 @@ class Gridfont():
       for path in o['paths']:
         new_path = []
         for x, y in path:
-          xx = s*(x-w*0.5)+w*0.5*s
-          yy = s*(y-h*0.5)+h*0.5*s
-          new_path.append((xx, yy))
+          new_path.append((s*(x-w*0.5)+w*0.5*s, s*(y-h*0.5)+h*0.5*s))
         new_paths.append(new_path)
-      o['w'] = w*s
-      o['h'] = h*s
-      o['paths'] = new_paths
+      o.update({'w': w*s, 'h': h*s, 'paths': new_paths})
     return self
 
   def save_svg(self, out, pad=(0, 0), sw=0.1):
