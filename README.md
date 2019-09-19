@@ -30,13 +30,18 @@ The next section is one or more paths, separated by the pipe symbol `|`.
 Specifically, the above example should result in the two paths of the letter
 `b`:
 
-
     |   <-- p1
     |
     |/-\   <-- p2
     |   |
     |   |
     |\-/
+
+Here are a few examples of more complex symbol definitions:
+
+    asterisk: S3,9:M1,3DS|S3.75Dq1,0.25t1,0.25|M0.25,5Dt0.75,1q0.75,1
+    w:        S5,9:S2D q1,4 t1,4 q1,4 t1,4
+    y:        S4,9:S2Dq1.5,4|M3,2De1.5,4e0.5,1e
 
 
 ## Paths
