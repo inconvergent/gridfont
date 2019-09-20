@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from re import compile as re_compile
-
+from fractions import Fraction
 
 
 def _get_all_commands(compass, special):
@@ -13,7 +13,7 @@ def _get_all_commands(compass, special):
   return cmd
 
 def _get_tokenizer(cmd):
-  r = re_compile(r'[{:s}][0-9,.]*'.format(''.join(cmd)))
+  r = re_compile(r'[{:s}][0-9,./]*'.format(''.join(cmd)))
   return lambda p: [x.group(0) for x in r.finditer(p)]
 
 
@@ -32,12 +32,26 @@ def _proc_tok(tok):
   arg = tok[1:]
   return cmd, _proc_arg(arg)
 
+def fract_float(a):
+  if '/' in a:
+    return Fraction(*[int(n.strip()) for n in a.split('/')])
+  return Fraction(a)
+
 def _proc_arg(arg):
   if not arg:
-    return 1.0
+    return 1
   if ',' in arg:
-    return tuple([float(a) for a in arg.split(',')])
-  return float(arg)
+    return tuple([fract_float(a) for a in arg.split(',')])
+  return fract_float(arg)
+
+def _paths_to_floats(paths):
+  res = []
+  for path in paths:
+    new_path = []
+    for x, y in path:
+      new_path.append((float(x), float(y)))
+    res.append(new_path)
+  return res
 
 
 def _assert_symbol_size(w, h, paths):
@@ -47,7 +61,7 @@ def _assert_symbol_size(w, h, paths):
       assert 0 <= y < h, 'y is out of bounds: {}'.format(y)
   return True
 
-base_symbols = '0123456789, .'
+base_symbols = '0123456789, ./'
 def _assert_valid_cmds(cmd, path):
   for p in path:
     assert p in cmd or p in base_symbols, 'not a valid command: {:s}'.format(p)

@@ -6,7 +6,7 @@ from setuptools import find_packages
 
 
 setup(name='font',
-      version='0.2.0',
+      version='0.3.0',
       description='',
       url='https://github.com/inconvergent/gridfont',
       license='MIT License',

@@ -25,15 +25,15 @@ class Writer():
     self.xdst = 1
     self.dwg = Drawing(str(outfn), size=size, profile='tiny', debug=False)
     with open(str(fontfn), 'r') as f:
-      self.jsn = load(f)
+      self.symbols = load(f)['symbols']
 
   def newline(self):
     self.pos = (self.pad, self.pos[1] + self.nl)
 
   def write(self, phrase):
     for s in phrase:
-      if s in self.jsn:
-        o = self.jsn[s]
+      if s in self.symbols:
+        o = self.symbols[s]
         gw = o['w']
         paths = o['paths']
         for path in paths:

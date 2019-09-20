@@ -10,6 +10,7 @@ from .helpers import _get_tokenizer
 from .helpers import _parse_info
 from .helpers import _proc_tok
 from .helpers import _rel_move
+from .helpers import _paths_to_floats
 from .utils import pwrite
 from .utils import show_exception
 
@@ -25,9 +26,10 @@ class Gridfont():
       self.special = jsn['special']
 
       # note: these structures are manipulated in-place
-      self.groups = jsn['groups']
-      self.symbols = jsn['symbols']
       self.compass = jsn['compass']
+      self.groups = jsn['groups']
+      self.jsn = jsn
+      self.symbols = jsn['symbols']
 
       cmd = _get_all_commands(self.compass, list(self.special.values()))
       self.all_commands = cmd
@@ -141,6 +143,8 @@ class Gridfont():
       _type = o['type'] if 'type' in o else 'symb'
       fn = out.joinpath('{:s}_{:s}.svg'.format(_type, name))
       try:
+        # requires self.save to be run atm. because it converts to floats.
+        # improve
         draw_paths(fn, (o['w'], o['h']), o['paths'], pad, sw=sw)
       except Exception as e:
         print('!svg err on symb: {:s}: {}'.format(symb, e))
@@ -151,6 +155,9 @@ class Gridfont():
     fn = out.joinpath('res.json')
     print('writing:', fn)
     with open(str(fn), 'w') as f:
-      pwrite(self.symbols, f)
+      for o in self.symbols.values():
+        # converts in-place. consider changing this
+        o.update({'paths': _paths_to_floats(o['paths'])})
+      pwrite(self.jsn, f)
     return self
 

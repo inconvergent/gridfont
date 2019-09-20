@@ -54,16 +54,6 @@
             "raw": "S1,9:DS4|S5DS",
             "type": "symbol"
         },
-        "~": {
-            "name": "tilde",
-            "raw": "S4,9:S4.5D t0.5,1R0.5qR0.5t0.5,1",
-            "type": "symbol"
-        },
-        "'": {
-            "name": "tick",
-            "raw": "S1,9:S1DS1.5",
-            "type": "symbol"
-        },
         "\"": {
             "name": "doubletick",
             "raw": "S2,9:S1DS1.5|M1DS1.5",
@@ -71,12 +61,17 @@
         },
         "#": {
             "name": "hash",
-            "raw": "S3,9:M1,2De1,4|M2De1,4| M0.25,3.5DR1.75| M0,4.5DR1.75",
+            "raw": "S3,9:M1,2De1,4|M2De1,4| M1/4,3.5DR1.75| M0,4.5DR1.75",
             "type": "symbol"
         },
         "%": {
             "name": "percent",
-            "raw": "S4,9:M3,2De3,4 | M0.5,2.5D q0.5e0.5p0.5Z| M2.5,4.5 Dq0.5e0.5p0.5Z",
+            "raw": "S4,9:M3,2De3,4 | M1/2,2.5D q1/2e1/2p1/2Z| M2.5,4.5 Dq1/2e1/2p1/2Z",
+            "type": "symbol"
+        },
+        "'": {
+            "name": "tick",
+            "raw": "S1,9:S1DS1.5",
             "type": "symbol"
         },
         "(": {
@@ -91,7 +86,7 @@
         },
         "*": {
             "name": "asterisk",
-            "raw": "S3,9:M1,3DS|S3.75Dq1,0.25t1,0.25|M0.25,5Dt0.75,1q0.75,1",
+            "raw": "S3,9:M1,3DS|S3.75Dq1,1/4t1,1/4|M1/4,5Dt3/4,1q3/4,1",
             "type": "symbol"
         },
         "+": {
@@ -107,16 +102,6 @@
         "-": {
             "name": "dash",
             "raw": "S3,9:S4DR2",
-            "type": "symbol"
-        },
-        "_": {
-            "name": "underscore",
-            "raw": "S3,9:S6DR2",
-            "type": "symbol"
-        },
-        "^": {
-            "name": "hat",
-            "raw": "S4,9:S4Dt1.5,2q1.5,2",
             "type": "symbol"
         },
         ".": {
@@ -214,6 +199,16 @@
             "raw": "S2,9:SDRS6L",
             "type": "symbol"
         },
+        "^": {
+            "name": "hat",
+            "raw": "S4,9:S4Dt1.5,2q1.5,2",
+            "type": "symbol"
+        },
+        "_": {
+            "name": "underscore",
+            "raw": "S3,9:S6DR2",
+            "type": "symbol"
+        },
         "a": {
             "raw": "S4,9:M3,2DS4|R3S3DpLeS2qRt",
             "type": "letter"
@@ -275,7 +270,7 @@
             "type": "letter"
         },
         "p": {
-            "raw": "S4,9:S2Dh|S3DtRqS2eLp",
+            "raw": "S4,9:S2Dh|S3D t R q S2 e L p",
             "type": "letter"
         },
         "q": {
@@ -311,7 +306,7 @@
             "type": "letter"
         },
         "y": {
-            "raw": "S4,9:S2Dq1.5,4|M3,2De1.5,4e0.5,1e",
+            "raw": "S4,9:S2Dq1.5,4|M3,2De1.5,4e1/2,1e",
             "type": "letter"
         },
         "z": {
@@ -322,6 +317,12 @@
             "name": "pipe",
             "raw": "S1,9:S1DS6",
             "type": "symbol"
+        },
+        "~": {
+            "name": "tilde",
+            "raw": "S4,9:S4.5D t1/2,1R1/2qR1/2t1/2,1",
+            "type": "symbol"
         }
-    }
+    },
+    "v": "1"
 }

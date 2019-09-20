@@ -18,9 +18,9 @@ You can use spaces to separate moves, so you can for instance write it like this
     S4,9: DS6| S3 DtRq S2 eLp
 
 The first section (left of `:`) is the `info` section. Which currently contains
-the size of the grid. Here the width is `4` and the height is `9`. That is,
-there are `4` and `9` grid points in the two directions. That means the width
-of the symbol will be `3` and `8`.
+the size of the grid (as `integers`). Here the width is `4` and the height is
+`9`. That is, there are `4` and `9` grid points in the two directions. That
+means the width of the symbol will be `3` and `8`.
 
 In time this section might contain other things. Such as a translate command.
 (this might be useful if you are only drawing within a certain section of the
@@ -70,11 +70,27 @@ The following commands are allowed:
        / | \
      e   S   q
 
-Any number (written as integer: `3` or float: `3.4`) after a direction command
-is interpreted as the length of the step, otherwise the step size is `1`. You
-can also use two numbers separated by a comma. For instance `q2.5,3` will move
-the cursor two and a half steps to the right, and three steps down. Similarly
-`p2,3` will move the cursor two steps left, and three steps up.
+Any number (see below) after a direction command is interpreted as the length
+of the step, otherwise the step size is `1`. You can also use two numbers
+separated by a comma. For instance `q2.5,3` will move the cursor two and a half
+steps to the right, and three steps down. Similarly `p2,1/2` will move the
+cursor two steps left, and half a step up.
+
+
+### Numbers
+
+Accepted numbers are either integers: `1`, fractions: `1/2` or decimals: `3.5`.
+Note that all decimals are converted to fractions. Decimals are a convenience
+that allows you to write `4.5` instead of `9/2`. However, you are better of
+using `13/3` instead of `4.33...`. The latter will most likely not add up
+inside the limits of the grid. You can also use multiple commands in the same
+direction, if you find that easier. For instance `R4 R1/2`.
+
+That means that if you get out of bounds errors, it is either because you are
+using a decimal that does not "add up" properly inside the grid. Or simply
+because the resulting number is outside the grid.
+
+Numbers are converted to float before being exported to `json` or `svg`
 
 
 ### Absolute Moves
@@ -150,7 +166,7 @@ end up developing this much further, but I'm open to suggestions.
 ## References
 
  - This is very similar to the Hershey fonts:
-   https://en.wikipedia.org/wiki/Hershey_fonts which you probably should use,
+   https://en.wikipedia.org/wiki/Hershey_fonts. Which you probably should use,
    as they have been around for some time
 
  - This method is also similar to drawing in Logo:
@@ -161,4 +177,8 @@ end up developing this much further, but I'm open to suggestions.
 
  - If you find this interesting, you might also like Recursive Radical Packing
    Language: https://github.com/LingDong-/rrpl
+
+ - Metafont (LaTeX): https://en.wikipedia.org/wiki/Metafont
+
+ - LeonSans: https://github.com/cmiscm/leonsans
 

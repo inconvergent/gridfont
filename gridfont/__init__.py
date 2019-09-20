@@ -10,7 +10,7 @@ Usage:
 Options:
 
   --svg       export an svg for each symbol
-  --lenient   ignore some asserts
+  --lenient   ignore some tests/asserts, most notably the out of bounds test
 
   -h --help   show this screen.
   --version   show version.
@@ -35,7 +35,7 @@ from .write import Writer
 
 
 def main():
-  args = docopt(__doc__, version='gridfont 0.2.0')
+  args = docopt(__doc__, version='gridfont 0.3.0')
   try:
     _in = Path(args['<in>'])
     _out = Path(args['<out>'])
