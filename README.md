@@ -104,13 +104,21 @@ The following absolute moves are allowed
   - `H` to move to the top of the drawing.
   - `h` to move to the bottom of the drawing.
 
+### Groups
 
-## Font
+You can provide substitution groups in the `groups` property of the symbol
+specification. Any `(group)` in a path definition will be replaced verbatim.
 
-The font paths are included in `out/res.json`, along with SVGs for each symbol.
-The raw descriptions are in `dat/font.json`.
 
-See below for how to parse your own symbol files.
+## Fonts
+
+The font paths are included in `dat/*/res.json`, along with SVGs for each
+symbol. The raw descriptions are in `dat/*.json`.
+
+At the moment the included fonts are:
+
+ - `original`: blocky letters
+ - `smooth`: smoother version. (**almost completed**)
 
 
 ## Using the Code
@@ -133,17 +141,17 @@ To see other options use:
 To parse a symbol `.json` file such as `dat/font.json` run the following, to
 output the results to the directory `out`
 
-    gridfont parse dat/font.json out [--svg]
+    gridfont parse font.json out [--svg]
 
 If you include the `--svg` flag, an svg will also be created for each symbol.
 
 
 ## Writing
 
-When you have a parsed symbol file (such `out/res.json`), you can write SVGs
-with it like this:
+When you have a parsed symbol file (such `dat/original/res.json`), you can
+write SVGs with it like this:
 
-    gridfont write out/res.json tmp.svg 'my text'
+    gridfont write res.json tmp.svg 'my text'
 
 
 ## Contributing
@@ -155,6 +163,7 @@ end up developing this much further, but I'm open to suggestions.
 
 ## Todo
 
+ - Fix smooth numerals 2,3,5?
  - Capital letters, at least `A-Z`
  - finish more common symbols `@&{}` ...
  - shift origin (in info section)?

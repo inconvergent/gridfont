@@ -33,7 +33,12 @@
             -1
         ]
     },
-    "groups": {},
+    "groups": {
+        "(c-arc)": "R3S3DpLeS2qRt",
+        "(b-arc)": "S3DtRqS2eLp",
+        "(dash)": "S4DR2",
+        "(small-o)" :"Dq1/2e1/2p1/2Z"
+    },
     "special": {
         "abs_move": "M",
         "bottom": "h",
@@ -61,12 +66,12 @@
         },
         "#": {
             "name": "hash",
-            "raw": "S3,9:M1,2De1,4|M2De1,4| M1/4,3.5DR1.75| M0,4.5DR1.75",
+            "raw": "S3,9:M1,2De1,4|M2De1,4|M1/4,3.5DR1.75|M0,4.5DR1.75",
             "type": "symbol"
         },
         "%": {
             "name": "percent",
-            "raw": "S4,9:M3,2De3,4 | M1/2,2.5D q1/2e1/2p1/2Z| M2.5,4.5 Dq1/2e1/2p1/2Z",
+            "raw": "S4,9:M3,2De3,4|M1/2,2.5(small-o)|M2.5,4.5(small-o)",
             "type": "symbol"
         },
         "'": {
@@ -91,7 +96,7 @@
         },
         "+": {
             "name": "plus",
-            "raw": "S3,9:S4DR2|M1,3DS2",
+            "raw": "S3,9:(dash)|M1,3DS2",
             "type": "symbol"
         },
         ",": {
@@ -101,7 +106,7 @@
         },
         "-": {
             "name": "dash",
-            "raw": "S3,9:S4DR2",
+            "raw": "S3,9:(dash)",
             "type": "symbol"
         },
         ".": {
@@ -210,19 +215,19 @@
             "type": "symbol"
         },
         "a": {
-            "raw": "S4,9:M3,2DS4|R3S3DpLeS2qRt",
+            "raw": "S4,9:M3,2DS4|(c-arc)",
             "type": "letter"
         },
         "b": {
-            "raw": "S4,9:DS6|S3DtRqS2eLp",
+            "raw": "S4,9:DS6|(b-arc)",
             "type": "letter"
         },
         "c": {
-            "raw": "S4,9:M3,3DpLeS2qRt",
+            "raw": "S4,9:(c-arc)",
             "type": "letter"
         },
         "d": {
-            "raw": "S4,9:M3,0DS6|R3S3DpLeS2qRt",
+            "raw": "S4,9:M3,0DS6|(c-arc)",
             "type": "letter"
         },
         "e": {
@@ -234,7 +239,7 @@
             "type": "letter"
         },
         "g": {
-            "raw": "S4,9:R3S3DpLeS2qRt|M3,2DS5eL",
+            "raw": "S4,9:(c-arc)|M3,2DS5eL",
             "type": "letter"
         },
         "h": {
@@ -266,15 +271,15 @@
             "type": "letter"
         },
         "o": {
-            "raw": "S4,9:q3DpLeS2qRtZ",
+            "raw": "S4,9:(c-arc)Z",
             "type": "letter"
         },
         "p": {
-            "raw": "S4,9:S2Dh|S3D t R q S2 e L p",
+            "raw": "S4,9:S2Dh|(b-arc)",
             "type": "letter"
         },
         "q": {
-            "raw": "S4,9:M3,2Dh|R3S3DpLeS2qRt",
+            "raw": "S4,9:M3,2Dh|(c-arc)",
             "type": "letter"
         },
         "r": {
@@ -298,7 +303,7 @@
             "type": "letter"
         },
         "w": {
-            "raw": "S5,9:S2D q1,4 t1,4 q1,4 t1,4",
+            "raw": "S5,9:S2Dq1,4t1,4q1,4t1,4",
             "type": "letter"
         },
         "x": {
@@ -320,9 +325,9 @@
         },
         "~": {
             "name": "tilde",
-            "raw": "S4,9:S4.5D t1/2,1R1/2qR1/2t1/2,1",
+            "raw": "S4,9:S4.5Dt1/2,1R1/2qR1/2t1/2,1",
             "type": "symbol"
         }
     },
-    "v": "1"
+    "v": "original-v1"
 }

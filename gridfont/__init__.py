@@ -35,7 +35,7 @@ from .write import Writer
 
 
 def main():
-  args = docopt(__doc__, version='gridfont 0.3.0')
+  args = docopt(__doc__, version='gridfont 0.5.0')
   try:
     _in = Path(args['<in>'])
     _out = Path(args['<out>'])
