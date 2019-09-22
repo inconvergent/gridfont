@@ -34,11 +34,19 @@
         ]
     },
     "groups": {
-        "(b-arc)": "S3S1/3 D t1/6,2/3t1/2t1/2,1/6 R2/3 q1/2,1/6q1/2q1/6,2/3 S4/3 e1/6,2/3e1/2e1/2,1/6 L2/3 p1/2,1/6p1/2p1/6,2/3",
-        "(c-arc)": "M3S1/3 D p1/6,2/3p1/2p1/2,1/6 L2/3 e1/2,1/6e1/2e1/6,2/3 S4/3 q1/6,2/3q1/2q1/2,1/6 R2/3 t1/2,1/6t1/2t1/6,2/3",
+        "(b-arc)": "S10/3D(t-cw)R2/3(q-cw)S4/3(e-cw)L2/3(p-cw)",
+        "(c-arc)": "M3S1/3D(p-ccw)L2/3(e-ccw)S4/3(q-ccw)R2/3(t-ccw)",
         "(dash)": "S4DR2",
-        "(n-top)": "t1/6,2/3t1/2t1/2,1/6 R2/3 q1/2,1/6q1/2q1/6,2/3",
-        "(small-o)": "Dq1/3,1/6 q1/6,1/3 e1/6,1/3 e1/3,1/6 p1/3,1/6 p1/6,1/3 t1/6,1/3Z"
+        "(e-ccw)": "e1/2,1/6e1/2e1/6,2/3",
+        "(e-cw)": "e1/6,2/3e1/2e1/2,1/6",
+        "(n-top)": "(t-cw)R2/3(q-cw)",
+        "(p-ccw)": "p1/6,2/3p1/2p1/2,1/6",
+        "(p-cw)": "p1/2,1/6p1/2p1/6,2/3",
+        "(q-ccw)": "q1/6,2/3q1/2q1/2,1/6",
+        "(q-cw)": "q1/2,1/6q1/2q1/6,2/3",
+        "(small-o)": "Dq1/3,1/6q1/6,1/3e1/6,1/3e1/3,1/6p1/3,1/6p1/6,1/3t1/6,1/3Z",
+        "(t-ccw)": "t1/2,1/6t1/2t1/6,2/3",
+        "(t-cw)": "t1/6,2/3t1/2t1/2,1/6"
     },
     "special": {
         "abs_move": "M",
@@ -62,22 +70,22 @@
         },
         "\"": {
             "name": "doubletick",
-            "raw": "S2,9:S1DS1.5|M1DS1.5",
+            "raw": "S2,9:S1DS3/2|M1DS3/2",
             "type": "symbol"
         },
         "#": {
             "name": "hash",
-            "raw": "S3,9:M1,2De1,4|M2De1,4|M1/4,3.5DR1.75|M0,4.5DR1.75",
+            "raw": "S3,9:M1,2De1,4|M2De1,4|M1/4,7/2DR7/4|M0,9/2DR7/4",
             "type": "symbol"
         },
         "%": {
             "name": "percent",
-            "raw": "S4,9:M3,2De3,4|M1/2,2.5(small-o)|M2.5,4.5(small-o)",
+            "raw": "S4,9:M3,2De3,4|M1/2,5/2(small-o)|M5/2,9/2(small-o)",
             "type": "symbol"
         },
         "'": {
             "name": "tick",
-            "raw": "S1,9:S1DS1.5",
+            "raw": "S1,9:S1DS3/2",
             "type": "symbol"
         },
         "(": {
@@ -92,7 +100,7 @@
         },
         "*": {
             "name": "asterisk",
-            "raw": "S3,9:M1,3DS|S3.75Dq1,1/4t1,1/4|M1/4,5Dt3/4,1q3/4,1",
+            "raw": "S3,9:M1,3DS|S15/4Dq1,1/4t1,1/4|M1/4,5Dt3/4,1q3/4,1",
             "type": "symbol"
         },
         "+": {
@@ -102,7 +110,7 @@
         },
         ",": {
             "name": "comma",
-            "raw": "S2,9:M1,6De1/3,2/3 e2/3,1/3",
+            "raw": "S2,9:M1,6De1/3,2/3e2/3,1/3",
             "type": "symbol"
         },
         "-": {
@@ -121,7 +129,7 @@
             "type": "symbol"
         },
         "0": {
-            "raw": "S4,9:(c-arc)Z|M2.5,2.5De2,3",
+            "raw": "S4,9:(c-arc)Z|M5/2De2,3",
             "type": "digit"
         },
         "1": {
@@ -129,11 +137,11 @@
             "type": "digit"
         },
         "2": {
-            "raw": "S4,9:S3S1/3D(n-top)e3,8/3R3",
+            "raw": "S4,9:S10/3D(n-top)e3,8/3R3",
             "type": "digit"
         },
         "3": {
-            "raw": "S4,9:S2DR3e2q2,1S11/6e1/6,2/3e1/2e1/2,1/6L2/3p1/2,1/6p1/2p1/6,2/3",
+            "raw": "S4,9:S2DR3e2q2,1S11/6(e-cw)L2/3(p-cw)",
             "type": "digit"
         },
         "4": {
@@ -142,12 +150,11 @@
         },
         "5": {
             "_raw_TODO": "S4,9:M3,2DL3S2R2qS2eL2",
-            "raw": "S4,9:M3,2DL3S2R2q1/2,1/6q1/2q1/6,2/3S4/3e1/6,2/3e1/2e1/2,1/6L2",
-
+            "raw": "S4,9:M3,2DL3S2R11/6(q-cw)S4/3(e-cw)L11/6",
             "type": "digit"
         },
         "6": {
-            "raw": "S4,9:M3,4/3Dp1/6,2/3p1/2p1/2,1/6L2/3e1/2,1/6e1/2e1/6,2/3S3S1/3q1/6,2/3q1/2q1/2,1/6R2/3t1/2,1/6t1/2t1/6,2/3N4/3p1/6,2/3p1/2p1/2,1/6L2/3e1/2,1/6e1/2e1/6,2/3",
+            "raw": "S4,9:M3,4/3D(p-ccw)L2/3(e-ccw)S10/3(q-ccw)R2/3(t-ccw)N4/3(p-ccw)L2/3(e-ccw)",
             "type": "digit"
         },
         "7": {
@@ -159,7 +166,7 @@
             "type": "digit"
         },
         "9": {
-            "raw": "S4,9:M3,4S2/3De1/6,2/3e1/2e1/2,1/6L2/3p1/2,1/6p1/2p1/6,2/3N4/3t1/6,2/3t1/2t1/2,1/6R2/3q1/2,1/6q1/2q1/6,2/3S3S1/3e1/6,2/3e1/2e1/2,1/6L2/3p1/2,1/6p1/2p1/6,2/3",
+            "raw": "S4,9:M3,4S2/3D(e-cw)L2/3(p-cw)N4/3(t-cw)R2/3(q-cw)S10/3(e-cw)L2/3(p-cw)",
             "type": "digit"
         },
         ":": {
@@ -179,7 +186,7 @@
         },
         "=": {
             "name": "equal",
-            "raw": "S3,9:S3.5DR2|S4.5DR2",
+            "raw": "S3,9:S7/2DR2|S9/2DR2",
             "type": "symbol"
         },
         ">": {
@@ -189,7 +196,7 @@
         },
         "?": {
             "name": "question",
-            "raw": "S4,9:SDtRqSeLS|M1,5DS",
+            "raw": "S4,9:S4/3D(t-cw)R2/3(q-cw)S1/3(e-cw)L5/6S|M1,5DS",
             "type": "symbol"
         },
         "[": {
@@ -209,7 +216,7 @@
         },
         "^": {
             "name": "hat",
-            "raw": "S4,9:S4Dt1.5,2q1.5,2",
+            "raw": "S4,9:S4Dt3/2,2q3/2,2",
             "type": "symbol"
         },
         "_": {
@@ -234,7 +241,7 @@
             "type": "letter"
         },
         "e": {
-            "raw": "S4,9:S3S2/3DR3N2/6p1/6,2/3p1/2p1/2,1/6L2/3e1/2,1/6e1/2e1/6,2/3S4/3q1/6,2/3q1/2q1/2,1/6R2/3t1/2,1/6t1/2t1/6,2/3",
+            "raw": "S4,9:S11/3DR3N1/3(p-ccw)L2/3(e-ccw)S4/3(q-ccw)R2/3(t-ccw)",
             "type": "letter"
         },
         "f": {
@@ -242,11 +249,11 @@
             "type": "letter"
         },
         "g": {
-            "raw": "S4,9:(c-arc)|M3,2DS4S2/3e1/6,2/3e1/2e1/2,1/6L",
+            "raw": "S4,9:(c-arc)|M3,2DS14/3(e-cw)L",
             "type": "letter"
         },
         "h": {
-            "raw": "S4,9:DS6|S3S1/3D(n-top)S8/3",
+            "raw": "S4,9:DS6|S10/3D(n-top)S8/3",
             "type": "letter"
         },
         "i": {
@@ -266,11 +273,11 @@
             "type": "letter"
         },
         "m": {
-            "raw": "S7,9:S2DS4|S3S1/3D(n-top)S8/3|M3,3S1/3D(n-top)S8/3",
+            "raw": "S7,9:S2DS4|S10/3D(n-top)S8/3|M3,3S1/3D(n-top)S8/3",
             "type": "letter"
         },
         "n": {
-            "raw": "S4,9:S2DS4|S3S1/3D(n-top)S8/3",
+            "raw": "S4,9:S2DS4|S10/3D(n-top)S8/3",
             "type": "letter"
         },
         "o": {
@@ -286,7 +293,7 @@
             "type": "letter"
         },
         "r": {
-            "raw": "S3,9:S2DS4|S3S1/3Dt1/6,2/3t1/2t1/2,1/6R5/6",
+            "raw": "S3,9:S2DS4|S10/3D(t-cw)R5/6",
             "type": "letter"
         },
         "s": {
@@ -298,11 +305,11 @@
             "type": "letter"
         },
         "u": {
-            "raw": "S4,9:S2DS2S2/3 q1/6,2/3q1/2q1/2,1/6 R2/3 t1/2,1/6t1/2t1/6,2/3|M3,2DS4",
+            "raw": "S4,9:S2DS8/3(q-ccw)R2/3(t-ccw)|M3,2DS4",
             "type": "letter"
         },
         "v": {
-            "raw": "S4,9:S2Dq1.5,4t1.5,4",
+            "raw": "S4,9:S2Dq3/2,4t3/2,4",
             "type": "letter"
         },
         "w": {
@@ -314,7 +321,7 @@
             "type": "letter"
         },
         "y": {
-            "raw": "S4,9:S2Dq1.5,4|M3,2De1.5,4e1/2,1e",
+            "raw": "S4,9:S2Dq3/2,4|M3,2De3/2,4e1/2,1e",
             "type": "letter"
         },
         "z": {
@@ -328,7 +335,7 @@
         },
         "~": {
             "name": "tilde",
-            "raw": "S4,9:S4.5Dt1/2,1R1/2qR1/2t1/2,1",
+            "raw": "S4,9:S9/2Dt1/2,1R1/2qR1/2t1/2,1",
             "type": "symbol"
         }
     },

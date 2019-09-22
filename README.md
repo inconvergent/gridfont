@@ -106,8 +106,11 @@ The following absolute moves are allowed
 
 ### Groups
 
-You can provide substitution groups in the `groups` property of the symbol
-specification. Any `(group)` in a path definition will be replaced verbatim.
+You can provide substitution groups in the `groups` property of the `json`
+specification. Groups names should always start with a `(` and end with a `)`.
+Any `(group)` in a path definition will be replaced verbatim until there are no
+more `(` or `)` left in the path specification. (Note: this means you can cause
+infinite loops as well as memory leaks.)
 
 
 ## Fonts
@@ -163,13 +166,12 @@ end up developing this much further, but I'm open to suggestions.
 
 ## Todo
 
- - Fix smooth numerals 2,3,5?
+ - Fix smooth numerals 2,3,5
  - Capital letters, at least `A-Z`
  - finish more common symbols `@&{}` ...
  - shift origin (in info section)?
  - simple pair kerning instructions?
  - some ligatures?
- - groups/pre-defined shapes?
 
 
 ## References

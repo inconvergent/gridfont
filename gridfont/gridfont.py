@@ -70,8 +70,9 @@ class Gridfont():
     raise ValueError('encountered invalid command: {:s}'.format(cmd))
 
   def _sub_groups(self, path):
-    for old, new in self.groups.items():
-      path = path.replace(old, new)
+    while '(' in path or ')' in path:
+      for old, new in self.groups.items():
+        path = path.replace(old, new)
     return path
 
   def _parse_path(self, bbox, path):

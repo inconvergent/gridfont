@@ -91,9 +91,11 @@
   <path d="M57.0,24.0 L54.0,28.0" fill="none" stroke="black" stroke-width="0.2"/>
   <path d="M54.5,24.5 L55.0,25.0 L54.5,25.5 L54.0,25.0 L54.5,24.5" fill="none" stroke="black" stroke-width="0.2"/>
   <path d="M56.5,26.5 L57.0,27.0 L56.5,27.5 L56.0,27.0 L56.5,26.5" fill="none" stroke="black" stroke-width="0.2"/>
-  <path d="M58.0,26.5 L58.5,25.5 L59.0,25.5 L60.0,26.5 L60.5,26.5 L61.0,25.5" fill="none" stroke="black" stroke-width="0.2"/>
-  <path d="M62.0,23.0 L62.0,24.5" fill="none" stroke="black" stroke-width="0.2"/>
-  <path d="M63.0,23.0 L63.0,24.5" fill="none" stroke="black" stroke-width="0.2"/>
+  <path d="M58.0,23.0 L59.0,22.0 L60.0,22.0 L61.0,23.0 L61.0,24.0 L60.0,25.0 L59.0,25.0 L59.0,26.0" fill="none" stroke="black" stroke-width="0.2"/>
+  <path d="M59.0,27.0 L59.0,28.0" fill="none" stroke="black" stroke-width="0.2"/>
+  <path d="M62.0,26.5 L62.5,25.5 L63.0,25.5 L64.0,26.5 L64.5,26.5 L65.0,25.5" fill="none" stroke="black" stroke-width="0.2"/>
+  <path d="M66.0,23.0 L66.0,24.5" fill="none" stroke="black" stroke-width="0.2"/>
+  <path d="M67.0,23.0 L67.0,24.5" fill="none" stroke="black" stroke-width="0.2"/>
   <path d="M2.0,32.0 L2.0,38.0" fill="none" stroke="black" stroke-width="0.2"/>
   <path d="M2.0,34.0 L3.0,34.0" fill="none" stroke="black" stroke-width="0.2"/>
   <path d="M4.0,32.0 L4.0,38.0" fill="none" stroke="black" stroke-width="0.2"/>
@@ -136,28 +138,26 @@
   <path d="M22.0,45.0 L21.0,44.0 L20.0,44.0 L19.0,45.0 L20.0,46.0 L21.0,46.0 L22.0,47.0 L21.0,48.0 L20.0,48.0 L19.0,47.0" fill="none" stroke="black" stroke-width="0.2"/>
   <path d="M28.0,45.0 L27.0,44.0 L26.0,44.0 L25.0,45.0 L25.0,47.0 L26.0,48.0 L27.0,48.0 L28.0,47.0 L28.0,45.0" fill="none" stroke="black" stroke-width="0.2"/>
   <path d="M29.0,44.0 L30.5,48.0 L32.0,44.0" fill="none" stroke="black" stroke-width="0.2"/>
-  <path d="M33.0,46.0 L34.5,44.0 L36.0,46.0" fill="none" stroke="black" stroke-width="0.2"/>
-  <path d="M38.0,46.0 L39.0,46.0 L40.0,45.0 L39.0,44.0 L38.0,44.0 L37.0,45.0 L37.0,47.0 L38.0,48.0 L39.0,48.0 L40.0,47.0" fill="none" stroke="black" stroke-width="0.2"/>
-  <path d="M41.0,44.0 L41.0,48.0" fill="none" stroke="black" stroke-width="0.2"/>
-  <path d="M41.0,45.0 L42.0,44.0 L43.0,44.0" fill="none" stroke="black" stroke-width="0.2"/>
-  <path d="M46.0,42.0 L46.0,48.0" fill="none" stroke="black" stroke-width="0.2"/>
-  <path d="M46.0,44.0 L47.0,44.0" fill="none" stroke="black" stroke-width="0.2"/>
-  <path d="M48.0,42.0 L48.0,48.0" fill="none" stroke="black" stroke-width="0.2"/>
-  <path d="M48.0,45.0 L49.0,44.0 L50.0,44.0 L51.0,45.0 L51.0,48.0" fill="none" stroke="black" stroke-width="0.2"/>
-  <path d="M53.0,46.0 L54.0,46.0 L55.0,45.0 L54.0,44.0 L53.0,44.0 L52.0,45.0 L52.0,47.0 L53.0,48.0 L54.0,48.0 L55.0,47.0" fill="none" stroke="black" stroke-width="0.2"/>
-  <path d="M58.0,43.0 L56.0,49.0" fill="none" stroke="black" stroke-width="0.2"/>
-  <path d="M59.0,42.0 L59.0,48.0" fill="none" stroke="black" stroke-width="0.2"/>
-  <path d="M63.0,44.0 L63.0,48.0" fill="none" stroke="black" stroke-width="0.2"/>
-  <path d="M63.0,45.0 L62.0,44.0 L61.0,44.0 L60.0,45.0 L60.0,47.0 L61.0,48.0 L62.0,48.0 L63.0,47.0" fill="none" stroke="black" stroke-width="0.2"/>
-  <path d="M64.0,44.0 L67.0,44.0 L64.0,48.0 L67.0,48.0" fill="none" stroke="black" stroke-width="0.2"/>
-  <path d="M68.0,44.0 L69.5,48.0" fill="none" stroke="black" stroke-width="0.2"/>
-  <path d="M71.0,44.0 L69.5,48.0 L69.0,49.0 L68.0,50.0" fill="none" stroke="black" stroke-width="0.2"/>
-  <path d="M77.0,42.0 L77.0,48.0" fill="none" stroke="black" stroke-width="0.2"/>
-  <path d="M77.0,45.0 L76.0,44.0 L75.0,44.0 L74.0,45.0 L74.0,47.0 L75.0,48.0 L76.0,48.0 L77.0,47.0" fill="none" stroke="black" stroke-width="0.2"/>
-  <path d="M81.0,45.0 L80.0,44.0 L79.0,44.0 L78.0,45.0 L78.0,47.0 L79.0,48.0 L80.0,48.0 L81.0,47.0 L81.0,45.0" fill="none" stroke="black" stroke-width="0.2"/>
-  <path d="M85.0,45.0 L84.0,44.0 L83.0,44.0 L82.0,45.0 L82.0,47.0 L83.0,48.0 L84.0,48.0 L85.0,47.0" fill="none" stroke="black" stroke-width="0.2"/>
-  <path d="M85.0,44.0 L85.0,49.0 L84.0,50.0 L83.0,50.0" fill="none" stroke="black" stroke-width="0.2"/>
-  <path d="M86.0,43.0 L88.0,49.0" fill="none" stroke="black" stroke-width="0.2"/>
-  <path d="M89.0,42.0 L89.0,46.0" fill="none" stroke="black" stroke-width="0.2"/>
-  <path d="M89.0,47.0 L89.0,48.0" fill="none" stroke="black" stroke-width="0.2"/>
+  <path d="M34.0,46.0 L35.0,46.0 L36.0,45.0 L35.0,44.0 L34.0,44.0 L33.0,45.0 L33.0,47.0 L34.0,48.0 L35.0,48.0 L36.0,47.0" fill="none" stroke="black" stroke-width="0.2"/>
+  <path d="M37.0,44.0 L37.0,48.0" fill="none" stroke="black" stroke-width="0.2"/>
+  <path d="M37.0,45.0 L38.0,44.0 L39.0,44.0" fill="none" stroke="black" stroke-width="0.2"/>
+  <path d="M42.0,42.0 L42.0,48.0" fill="none" stroke="black" stroke-width="0.2"/>
+  <path d="M42.0,44.0 L43.0,44.0" fill="none" stroke="black" stroke-width="0.2"/>
+  <path d="M44.0,42.0 L44.0,48.0" fill="none" stroke="black" stroke-width="0.2"/>
+  <path d="M44.0,45.0 L45.0,44.0 L46.0,44.0 L47.0,45.0 L47.0,48.0" fill="none" stroke="black" stroke-width="0.2"/>
+  <path d="M49.0,46.0 L50.0,46.0 L51.0,45.0 L50.0,44.0 L49.0,44.0 L48.0,45.0 L48.0,47.0 L49.0,48.0 L50.0,48.0 L51.0,47.0" fill="none" stroke="black" stroke-width="0.2"/>
+  <path d="M54.0,42.0 L54.0,48.0" fill="none" stroke="black" stroke-width="0.2"/>
+  <path d="M58.0,44.0 L58.0,48.0" fill="none" stroke="black" stroke-width="0.2"/>
+  <path d="M58.0,45.0 L57.0,44.0 L56.0,44.0 L55.0,45.0 L55.0,47.0 L56.0,48.0 L57.0,48.0 L58.0,47.0" fill="none" stroke="black" stroke-width="0.2"/>
+  <path d="M59.0,44.0 L62.0,44.0 L59.0,48.0 L62.0,48.0" fill="none" stroke="black" stroke-width="0.2"/>
+  <path d="M63.0,44.0 L64.5,48.0" fill="none" stroke="black" stroke-width="0.2"/>
+  <path d="M66.0,44.0 L64.5,48.0 L64.0,49.0 L63.0,50.0" fill="none" stroke="black" stroke-width="0.2"/>
+  <path d="M72.0,42.0 L72.0,48.0" fill="none" stroke="black" stroke-width="0.2"/>
+  <path d="M72.0,45.0 L71.0,44.0 L70.0,44.0 L69.0,45.0 L69.0,47.0 L70.0,48.0 L71.0,48.0 L72.0,47.0" fill="none" stroke="black" stroke-width="0.2"/>
+  <path d="M76.0,45.0 L75.0,44.0 L74.0,44.0 L73.0,45.0 L73.0,47.0 L74.0,48.0 L75.0,48.0 L76.0,47.0 L76.0,45.0" fill="none" stroke="black" stroke-width="0.2"/>
+  <path d="M80.0,45.0 L79.0,44.0 L78.0,44.0 L77.0,45.0 L77.0,47.0 L78.0,48.0 L79.0,48.0 L80.0,47.0" fill="none" stroke="black" stroke-width="0.2"/>
+  <path d="M80.0,44.0 L80.0,49.0 L79.0,50.0 L78.0,50.0" fill="none" stroke="black" stroke-width="0.2"/>
+  <path d="M81.0,43.0 L83.0,49.0" fill="none" stroke="black" stroke-width="0.2"/>
+  <path d="M84.0,42.0 L84.0,46.0" fill="none" stroke="black" stroke-width="0.2"/>
+  <path d="M84.0,47.0 L84.0,48.0" fill="none" stroke="black" stroke-width="0.2"/>
 </svg>
