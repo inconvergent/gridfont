@@ -26,11 +26,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.828427"
-     inkscape:cx="187.96893"
-     inkscape:cy="29.487088"
+     inkscape:zoom="7.9999996"
+     inkscape:cx="135.18522"
+     inkscape:cy="96.124083"
      inkscape:document-units="px"
-     inkscape:current-layer="layer6"
+     inkscape:current-layer="layer31"
      showgrid="true"
      showguides="false"
      inkscape:pagecheckerboard="false"
@@ -890,10 +890,10 @@
      transform="translate(-27.252082,-67.077082)">
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.21166666;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:1.50298703;stroke-dasharray:none;stroke-opacity:1"
-       d="m 46.037489,125.55006 h 1.587498 1.587498 1.587504 l -3.17499,3.17496 3.175002,1.58748 -1.2e-5,1.58754 v 1.58754 l -1.587498,1.58748 h -1.587498 l -1.587504,-1.58748"
+       d="m 46.037489,125.55006 h 1.587498 1.587498 1.587504 l -0.264574,1.05825 -0.79375,1.32292 -2.116666,0.79379 2.116666,0.52913 1.058336,1.05835 -1.2e-5,1.58754 v 1.58754 l -1.587498,1.58748 h -1.587498 l -1.587504,-1.58748"
        id="path2358"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccccccc" />
+       sodipodi:nodetypes="cccccccccccccc" />
   </g>
   <g
      inkscape:groupmode="layer"

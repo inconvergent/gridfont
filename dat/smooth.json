@@ -137,11 +137,11 @@
             "type": "digit"
         },
         "2": {
-            "raw": "S4,9:S10/3D(n-top)e3,8/3R3",
+            "raw": "S4,9:S19/6D(n-top)e1/6,2/3e13/6,5/6e1/2e1/6,1/2S1/3R3",
             "type": "digit"
         },
         "3": {
-            "raw": "S4,9:S2DR3e2q2,1S11/6(e-cw)L2/3(p-cw)",
+            "raw": "S4,9:S2DR3e1/6,2/3e1/2,5/6e4/3,1/2q4/3,1/3q2/3S5/3(e-cw)L2/3(p-cw)",
             "type": "digit"
         },
         "4": {
