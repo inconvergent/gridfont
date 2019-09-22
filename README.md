@@ -1,6 +1,7 @@
 # Gridfont - Grid-based Font System
 
-![font sample](img/font.svg)
+![original](img/originak.svg)
+![smooth](img/smooth.svg)
 
 **NOTE: this code is a work in progress, and it might change at any moment.
 Let me know if you find this system useful. I might be more careful with

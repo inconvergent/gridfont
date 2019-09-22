@@ -48,7 +48,8 @@ def main():
         font.save_svg(_out, pad=(2, 2), sw=2)
 
     elif args['write']:
-      writer = Writer(_in, _out, (100, 100), pad=2)
+      writer = Writer(_in, _out, (4000, 4000), pad=80, xdst=40, nl=10*40, sw=7)
+      writer.scale(40)
       for line in args['<text>'].split('\n'):
         writer.write(line)
         print(line)

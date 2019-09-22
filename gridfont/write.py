@@ -17,18 +17,31 @@ def shift_path(path, s):
 
 
 class Writer():
-  def __init__(self, fontfn, outfn, size, pad=0, sw=0.2, nl=10):
+  def __init__(self, fontfn, outfn, size, pad=0, sw=0.2, nl=10, xdst=1):
     self.pos = (pad, pad)
     self.sw = sw
     self.pad = pad
     self.nl = nl
-    self.xdst = 1
+    self.xdst = xdst
     self.dwg = Drawing(str(outfn), size=size, profile='tiny', debug=False)
     with open(str(fontfn), 'r') as f:
       self.symbols = load(f)['symbols']
 
   def newline(self):
     self.pos = (self.pad, self.pos[1] + self.nl)
+
+  def scale(self, s):
+    for o in self.symbols.values():
+      w = o['w']
+      h = o['h']
+      new_paths = []
+      for path in o['paths']:
+        new_path = []
+        for x, y in path:
+          new_path.append((s*(x-w*0.5)+w*0.5*s, s*(y-h*0.5)+h*0.5*s))
+        new_paths.append(new_path)
+      o.update({'w': w*s, 'h': h*s, 'paths': new_paths})
+    return self
 
   def write(self, phrase):
     for s in phrase:
