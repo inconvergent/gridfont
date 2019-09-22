@@ -1,11 +1,12 @@
 # Gridfont - Grid-based Font System
 
-![original](img/original.svg)
-![smooth](img/smooth.svg)
 
-**NOTE: this code is a work in progress, and it might change at any moment.
-Let me know if you find this system useful. I might be more careful with
-updates if I know someone are actually trying to use it.**
+![original](img/original.svg)
+`original`
+
+![smooth](img/smooth.svg)
+`smooth`
+
 
 grid-based system for designing simple symbols and fonts. including an example
 font. Mainly intended for plotter drawings.
