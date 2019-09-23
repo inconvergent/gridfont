@@ -34,10 +34,10 @@
         ]
     },
     "groups": {
-        "(c-arc)": "R3S3DpLeS2qRt",
         "(b-arc)": "S3DtRqS2eLp",
+        "(c-arc)": "q3DpLeS2qRt",
         "(dash)": "S4DR2",
-        "(small-o)" :"Dq1/2e1/2p1/2Z"
+        "(small-o)": "Dq1/2e1/2p1/2Z"
     },
     "special": {
         "abs_move": "M",
@@ -187,6 +187,11 @@
         "?": {
             "name": "question",
             "raw": "S4,9:SDtRqSeLS|M1,5DS",
+            "type": "symbol"
+        },
+        "@": {
+            "name": "at",
+            "raw": "S5,9:R1(c-arc)|M4,6DN5pL2e1S6qR2",
             "type": "symbol"
         },
         "[": {

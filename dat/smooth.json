@@ -34,19 +34,27 @@
         ]
     },
     "groups": {
-        "(b-arc)": "S10/3D(t-cw)R2/3(q-cw)S4/3(e-cw)L2/3(p-cw)",
-        "(c-arc)": "M3S1/3D(p-ccw)L2/3(e-ccw)S4/3(q-ccw)R2/3(t-ccw)",
+        "(b-arc)": "S10/3D(t-lcw)R2/3(q-lcw)S4/3(e-lcw)L2/3(p-lcw)",
+        "(c-arc)": "q3,10/3D(p-lccw)L2/3(e-lccw)S4/3(q-lccw)R2/3(t-lccw)",
         "(dash)": "S4DR2",
-        "(e-ccw)": "e1/2,1/6e1/2e1/6,2/3",
-        "(e-cw)": "e1/6,2/3e1/2e1/2,1/6",
-        "(n-top)": "(t-cw)R2/3(q-cw)",
-        "(p-ccw)": "p1/6,2/3p1/2p1/2,1/6",
-        "(p-cw)": "p1/2,1/6p1/2p1/6,2/3",
-        "(q-ccw)": "q1/6,2/3q1/2q1/2,1/6",
-        "(q-cw)": "q1/2,1/6q1/2q1/6,2/3",
+        "(e-ccw)": "e2/3,1/3e1/3,2/3",
+        "(e-cw)": "e1/3,2/3e2/3,1/3",
+        "(e-lccw)": "e1/2,1/6e1/2e1/6,2/3",
+        "(e-lcw)": "e1/6,2/3e1/2e1/2,1/6",
+        "(n-top)": "(t-lcw)R2/3(q-lcw)",
+        "(p-ccw)": "p1/3,2/3p2/3,1/3",
+        "(p-cw)": "p2/3,1/3p1/3,2/3",
+        "(p-lccw)": "p1/6,2/3p1/2p1/2,1/6",
+        "(p-lcw)": "p1/2,1/6p1/2p1/6,2/3",
+        "(q-ccw)": "q1/3,2/3q2/3,1/3",
+        "(q-cw)": "q2/3,1/3q1/3,2/3",
+        "(q-lccw)": "q1/6,2/3q1/2q1/2,1/6",
+        "(q-lcw)": "q1/2,1/6q1/2q1/6,2/3",
         "(small-o)": "Dq1/3,1/6q1/6,1/3e1/6,1/3e1/3,1/6p1/3,1/6p1/6,1/3t1/6,1/3Z",
-        "(t-ccw)": "t1/2,1/6t1/2t1/6,2/3",
-        "(t-cw)": "t1/6,2/3t1/2t1/2,1/6"
+        "(t-ccw)": "t2/3,1/3t1/3,2/3",
+        "(t-cw)": "t1/3,2/3t2/3,1/3",
+        "(t-lccw)": "t1/2,1/6t1/2t1/6,2/3",
+        "(t-lcw)": "t1/6,2/3t1/2t1/2,1/6"
     },
     "special": {
         "abs_move": "M",
@@ -90,12 +98,12 @@
         },
         "(": {
             "name": "leftpar",
-            "raw": "S2,9:qDe2/3,1/3e1/3,2/3S4q1/3,2/3q2/3,1/3",
+            "raw": "S2,9:qD(e-ccw)S4(q-ccw)",
             "type": "symbol"
         },
         ")": {
             "name": "rightpar",
-            "raw": "S2,9:SDq2/3,1/3q1/3,2/3S4e1/3,2/3e2/3,1/3",
+            "raw": "S2,9:SD(q-cw)S4(e-cw)",
             "type": "symbol"
         },
         "*": {
@@ -110,7 +118,7 @@
         },
         ",": {
             "name": "comma",
-            "raw": "S2,9:M1,6De1/3,2/3e2/3,1/3",
+            "raw": "S2,9:M1,6D(e-cw)",
             "type": "symbol"
         },
         "-": {
@@ -141,19 +149,19 @@
             "type": "digit"
         },
         "3": {
-            "raw": "S4,9:S2DR3e1/6,2/3e1/2,5/6e4/3,1/2q4/3,1/3q2/3S5/3(e-cw)L2/3(p-cw)",
+            "raw": "S4,9:S2DR3e1/6,2/3e1/2,5/6e4/3,1/2q4/3,1/3q2/3S5/3(e-lcw)L2/3(p-lcw)",
             "type": "digit"
         },
         "4": {
-            "raw": "S4,9:S2DS2q1/3,2/3q2/3,1/3R2|M3,2DS6",
+            "raw": "S4,9:S2DS2(q-ccw)R2|M3,2DS6",
             "type": "digit"
         },
         "5": {
-            "raw": "S4,9:M3,2DL3S2R11/6(q-cw)S4/3(e-cw)L11/6",
+            "raw": "S4,9:M3,2DL3S2R11/6(q-lcw)S4/3(e-lcw)L11/6",
             "type": "digit"
         },
         "6": {
-            "raw": "S4,9:M3,4/3D(p-ccw)L2/3(e-ccw)S10/3(q-ccw)R2/3(t-ccw)N4/3(p-ccw)L2/3(e-ccw)",
+            "raw": "S4,9:M3,4/3D(p-lccw)L2/3(e-lccw)S10/3(q-lccw)R2/3(t-lccw)N4/3(p-lccw)L2/3(e-lccw)",
             "type": "digit"
         },
         "7": {
@@ -161,11 +169,11 @@
             "type": "digit"
         },
         "8": {
-            "raw": "S4,9:M1,3Dp2/3,1/3p1/3,2/3Nt1/3,2/3t2/3,1/3Rq2/3,1/3q1/3,2/3Se1/3,2/3e2/3,1/3Le2/3,1/3e1/3,2/3Sq1/3,2/3q2/3,1/3Rt2/3,1/3t1/3,2/3Np1/3,2/3p2/3,1/3",
+            "raw": "S4,9:M1,3D(p-cw)N(t-cw)R(q-cw)S(e-cw)L(e-ccw)S(q-ccw)R(t-ccw)N(p-ccw)",
             "type": "digit"
         },
         "9": {
-            "raw": "S4,9:M3,4S2/3D(e-cw)L2/3(p-cw)N4/3(t-cw)R2/3(q-cw)S10/3(e-cw)L2/3(p-cw)",
+            "raw": "S4,9:M3,4S2/3D(e-lcw)L2/3(p-lcw)N4/3(t-lcw)R2/3(q-lcw)S10/3(e-lcw)L2/3(p-lcw)",
             "type": "digit"
         },
         ":": {
@@ -195,7 +203,12 @@
         },
         "?": {
             "name": "question",
-            "raw": "S4,9:S4/3D(t-cw)R2/3(q-cw)S1/3(e-cw)L5/6S|M1,5DS",
+            "raw": "S4,9:S4/3D(t-lcw)R2/3(q-lcw)S1/3(e-lcw)L5/6S|M1,5DS",
+            "type": "symbol"
+        },
+        "@": {
+            "name": "at",
+            "raw": "S5,9:R1(c-arc)|M4,6DN14/3(p-lccw)LL2/3(e-lccw)S16/3(q-lccw)R11/6",
             "type": "symbol"
         },
         "[": {
@@ -240,15 +253,15 @@
             "type": "letter"
         },
         "e": {
-            "raw": "S4,9:S11/3DR3N1/3(p-ccw)L2/3(e-ccw)S4/3(q-ccw)R2/3(t-ccw)",
+            "raw": "S4,9:S11/3DR3N1/3(p-lccw)L2/3(e-lccw)S4/3(q-lccw)R2/3(t-lccw)",
             "type": "letter"
         },
         "f": {
-            "raw": "S2,9:S6DN5t1/3,2/3t2/3,1/3|S2DR",
+            "raw": "S2,9:S6DN5(t-cw)|S2DR",
             "type": "letter"
         },
         "g": {
-            "raw": "S4,9:(c-arc)|M3,2DS14/3(e-cw)L",
+            "raw": "S4,9:(c-arc)|M3,2DS14/3(e-lcw)L",
             "type": "letter"
         },
         "h": {
@@ -260,7 +273,7 @@
             "type": "letter"
         },
         "j": {
-            "raw": "S2,9:M1,2DS5e1/3,2/3e2/3,1/3|R1DS",
+            "raw": "S2,9:M1,2DS5(e-cw)|R1DS",
             "type": "letter"
         },
         "k": {
@@ -292,11 +305,11 @@
             "type": "letter"
         },
         "r": {
-            "raw": "S3,9:S2DS4|S10/3D(t-cw)R5/6",
+            "raw": "S3,9:S2DS4|S10/3D(t-lcw)R5/6",
             "type": "letter"
         },
         "s": {
-            "raw": "S4,9:q3Dp1/3,2/3p2/3,1/3Le2/3,1/3e1/3,2/3q1/3,2/3q2/3,1/3Rq2/3,1/3q1/3,2/3e1/3,2/3e2/3,1/3Lp2/3,1/3p1/3,2/3",
+            "raw": "S4,9:q3D(p-ccw)L(e-ccw)(q-ccw)R(q-cw)(e-cw)L(p-cw)",
             "type": "letter"
         },
         "t": {
@@ -304,7 +317,7 @@
             "type": "letter"
         },
         "u": {
-            "raw": "S4,9:S2DS8/3(q-ccw)R2/3(t-ccw)|M3,2DS4",
+            "raw": "S4,9:S2DS8/3(q-lccw)R2/3(t-lccw)|M3,2DS4",
             "type": "letter"
         },
         "v": {
