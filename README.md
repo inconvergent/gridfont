@@ -170,7 +170,7 @@ end up developing this much further, but I'm open to suggestions.
 
  - Fix smooth numerals 2,3,5
  - Capital letters, at least `A-Z`
- - finish more common symbols `&{}` ...
+ - finish more common symbols `&` ...
  - shift origin (in info section)?
  - simple pair kerning instructions?
  - some ligatures?

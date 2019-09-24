@@ -73,7 +73,7 @@
         },
         "!": {
             "name": "exclaim",
-            "raw": "S1,9:DS4|S5DS",
+            "raw": "S2,9:R1/2DS4|M1/2,5(small-o)",
             "type": "symbol"
         },
         "\"": {
@@ -84,6 +84,11 @@
         "#": {
             "name": "hash",
             "raw": "S3,9:M1,2De1,4|M2De1,4|M1/4,7/2DR7/4|S9/2DR7/4",
+            "type": "symbol"
+        },
+        "$": {
+            "name": "dollar",
+            "raw": "S4,9:q3D(p-ccw)L(e-ccw)(q-ccw)R(q-cw)(e-cw)L(p-cw)|M3/2,1DS6",
             "type": "symbol"
         },
         "%": {
@@ -128,7 +133,7 @@
         },
         ".": {
             "name": "period",
-            "raw": "S2,9:M1,6DL",
+            "raw": "S2,9:M1/2,5(small-o)",
             "type": "symbol"
         },
         "/": {
@@ -178,12 +183,12 @@
         },
         ":": {
             "name": "colon",
-            "raw": "S1,9:S2DS|S5DS",
+            "raw": "S2,9:M1/2,2(small-o)|M1/2,5 (small-o)",
             "type": "symbol"
         },
         ";": {
             "name": "semicolon",
-            "raw": "S2,9:M1,2DS|M1,6De",
+            "raw": "S2,9:M1,2DS|M1,6D(e-cw)",
             "type": "symbol"
         },
         "<": {
@@ -203,7 +208,7 @@
         },
         "?": {
             "name": "question",
-            "raw": "S4,9:S4/3D(t-lcw)R2/3(q-lcw)S1/3(e-lcw)L5/6S|M1,5DS",
+            "raw": "S4,9:S4/3D(t-lcw)R2/3(q-lcw)S1/3(e-lcw)L5/6S|M2/2,5(small-o)",
             "type": "symbol"
         },
         "@": {
@@ -340,9 +345,19 @@
             "raw": "S4,9:S2DWe3,4W",
             "type": "letter"
         },
+        "{": {
+            "name": "leftcurl",
+            "raw": "S2,9:qD e1/3 e1/3,2/3 q1/3,1S5/6e2/3,1/6q2/3,1/6S5/6e1/3,1 q1/3,2/3 q1/3",
+            "type": "symbol"
+        },
         "|": {
             "name": "pipe",
             "raw": "S1,9:S1DS6",
+            "type": "symbol"
+        },
+        "}": {
+            "name": "rightcurl",
+            "raw": "S2,9:SD q1/3 q1/3,2/3 e1/3,1S5/6q2/3,1/6e2/3,1/6S5/6q1/3,1 e1/3,2/3 e1/3",
             "type": "symbol"
         },
         "~": {
@@ -351,5 +366,5 @@
             "type": "symbol"
         }
     },
-    "v": "smooth-v1"
+    "v": "smooth-v2"
 }

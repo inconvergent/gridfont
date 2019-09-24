@@ -39,14 +39,17 @@ def main():
   try:
     _in = Path(args['<in>'])
     _out = Path(args['<out>'])
+    print(args)
 
     # parse a symbol definition
     if args['parse']:
-      font = Gridfont(_in).parse(lenient=args['--lenient']).save(_out)
+      font = Gridfont(_in).parse(lenient=args['--lenient'])
+      font.save(_out)
       if args['--svg']:
         font.scale(20)
         font.save_svg(_out, pad=(2, 2), sw=2)
 
+    # write a phrase as SVG
     elif args['write']:
       writer = Writer(_in, _out, (4000, 4000), pad=80, xdst=40, nl=10*40, sw=7)
       writer.scale(40)

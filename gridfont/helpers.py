@@ -57,8 +57,10 @@ def _paths_to_floats(paths):
 def _assert_symbol_size(w, h, paths):
   for path in paths:
     for x, y in path:
-      assert 0 <= x < w, 'x is out of bounds: {}'.format(x)
-      assert 0 <= y < h, 'y is out of bounds: {}'.format(y)
+      assert 0 <= x <= w-1,\
+        'x is out of bounds: 0<={}<={}'.format(float(x), w-1)
+      assert 0 <= y <= h-1,\
+        'y is out of bounds: 0<={}<={}'.format(float(y), h-1)
   return True
 
 base_symbols = '0123456789, ./'

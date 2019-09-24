@@ -15,6 +15,13 @@ from .utils import pwrite
 from .utils import show_exception
 
 
+def _get_name(symb, o):
+  return o['name'] if 'name' in o else symb
+
+def _get_type(o):
+  return o['type'] if 'type' in o else 'symb'
+
+
 class Gridfont():
   def __init__(self, fn):
     print('loading:', fn)
@@ -108,6 +115,7 @@ class Gridfont():
   def parse(self, lenient=False):
     print('parsing ...')
     for symb, o in self.symbols.items():
+      name = _get_name(symb, o)
       try:
         raw = o['raw']
         raw_split = raw.strip().split(':')
@@ -122,10 +130,11 @@ class Gridfont():
             'paths': paths,
             'ord': ord(symb),
             'num': len(paths)})
-        print('\nsymb: {:s} {:s}'.format(symb, raw))
+
+        print('\nsymb: {:s} {:s}'.format(name, raw))
         print('  --> w {:d} h {:d} # {:d}'.format(w, h, len(paths)))
       except AssertionError as e:
-        print('\n!error: {:s} --- {}'.format(symb, e))
+        print('\n!error: {:s} --- {}'.format(name, e))
       except Exception as e:
         show_exception()
     return self
@@ -146,15 +155,14 @@ class Gridfont():
   def save_svg(self, out, pad=(0, 0), sw=0.1):
     print('writing svgs to:', out)
     for symb, o in self.symbols.items():
-      name = o['name'] if 'name' in o else symb
-      _type = o['type'] if 'type' in o else 'symb'
-      fn = out.joinpath('{:s}_{:s}.svg'.format(_type, name))
+      name = _get_name(symb, o)
+      fn = out.joinpath('{:s}_{:s}.svg'.format(_get_type(o), name))
       try:
         # requires self.save to be run atm. because it converts to floats.
         # improve
         draw_paths(fn, (o['w'], o['h']), o['paths'], pad, sw=sw)
       except Exception as e:
-        print('!svg err on symb: {:s}: {}'.format(symb, e))
+        print('!svg err on symb: {:s}: {}'.format(name, e))
         show_exception()
     return self
 
