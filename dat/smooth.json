@@ -188,7 +188,7 @@
         },
         ";": {
             "name": "semicolon",
-            "raw": "S2,9:M1,2DS|M1,6D(e-cw)",
+            "raw": "S2,9:M1/2,2D(small-o)|M1,6D(e-cw)",
             "type": "symbol"
         },
         "<": {

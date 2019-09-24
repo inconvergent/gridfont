@@ -42,9 +42,9 @@
      fit-margin-left="100"
      fit-margin-bottom="100"
      fit-margin-right="100"
-     inkscape:zoom="0.059"
-     inkscape:cx="-1009.9852"
-     inkscape:cy="503.5"
+     inkscape:zoom="0.472"
+     inkscape:cx="2983.8454"
+     inkscape:cy="950.61995"
      inkscape:window-x="0"
      inkscape:window-y="26"
      inkscape:window-maximized="0"
@@ -517,7 +517,7 @@
      inkscape:connector-curvature="0"
      style="fill:none;stroke:#000000;stroke-width:7" />
   <path
-     d="m 2663.9131,983.1305 v 40"
+     d="m 2643.9131,983.1305 v 0 l 13.3333,6.66667 6.6667,13.33333 -6.6667,13.3333 -13.3333,6.6667 -13.3333,-6.6667 -6.6667,-13.3333 6.6667,-13.33333 13.3333,-6.66667"
      id="path190"
      inkscape:connector-curvature="0"
      style="fill:none;stroke:#000000;stroke-width:7" />
