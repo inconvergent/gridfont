@@ -168,7 +168,7 @@ end up developing this much further, but I'm open to suggestions.
 
 ## Todo
 
- - Fix smooth numerals 2,3,5
+ - Improve smooth numerals `2` and `3`?
  - Capital letters, at least `A-Z`
  - finish more common symbols `&` ...
  - shift origin (in info section)?
