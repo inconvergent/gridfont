@@ -79,6 +79,12 @@
             "raw": "S4,9:M3,2De3,4|M1/2,2.5(small-o)|M2.5,4.5(small-o)",
             "type": "symbol"
         },
+        "&": {
+            "name": "ampersand",
+            "_raw": "S4,9:M3,4DSeLpNt|M3,6DNp3tq",
+            "raw": "S5,9:M4,4DeeLpNt|M4,6Dpp3tq",
+            "type": "symbol"
+        },
         "'": {
             "name": "tick",
             "raw": "S1,9:S1DS1.5",

@@ -4,7 +4,7 @@ set -e
 
 TXT="abcdefghijklmnopqr
 stuvwxyz1234567890
-*+\${}()/\[]^=-\!.,<>'#|_:;@%?~\"
+*&+\${}()/\[]^=-\!.,<>'#|_:;@%?~\"
 the quick (brown) fox?
 jumps over the lazy dog.
 d6304fd7 #1/2"
