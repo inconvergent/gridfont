@@ -1,10 +1,10 @@
 # Gridfont - Grid-based Font System
 
 
-![original](img/original.svg)
+![original](img/original.png)
 `original`
 
-![smooth](img/smooth.svg)
+![smooth](img/smooth.png)
 `smooth`
 
 
